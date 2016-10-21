@@ -3,6 +3,6 @@
 ========================= */
 
 .testBackground {
-	background: url(src/imgs/background.jpg) no-repeat center center;
+	background: url(../src/imgs/background.jpg) no-repeat center center;
 	background-size: cover;
 }
