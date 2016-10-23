@@ -7,9 +7,10 @@ app.controller('antesmap', function($scope, $http, $timeout, NgMap) {
     $scope.map = evtMap;
   });
 
-  $scope.googleMapsUrl = 'https://maps.googleapis.com/maps/api/js';
+  $scope.googleMapsUrl = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAvc8f2wLp2oBDCFPawvFuoJuIfjo6LYKY';
   $scope.pauseLoading = true;
 
+  // TIMEOUT 2 SECONDS INITIAL LOADING
   $timeout(function() {
     $scope.pauseLoading = false;
   }, 2000);
