@@ -7,7 +7,7 @@ app.controller('antesmap', function($scope, $http, $timeout, NgMap) {
     $scope.map = evtMap;
   });
 
-  $scope.googleMapsUrl = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAvc8f2wLp2oBDCFPawvFuoJuIfjo6LYKY';
+  $scope.googleMapsUrl = 'https://maps.googleapis.com/maps/api/js';
   $scope.pauseLoading = true;
 
   $timeout(function() {
