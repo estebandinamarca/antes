@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="">
-  <title>Antes | Lugares históricos</title>
-
-  <link rel="stylesheet" type="text/css" href="src/normalize/normalize.css">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" href="">
+	<title>Antes | Lugares históricos</title>
+	<!-- NORMALIZE -->
+	<link rel="stylesheet" type="text/css" href="src/normalize/normalize.css">
+	<!-- STYLES -->
+	<link rel="stylesheet" type="text/css" href="src/css/styles.css">
 </head>
 
-<body>
-  <h1>Antes v1.0</h1>
+<body ng-app="app" ng-controller="antesmap">
+
+	<div class="header">
+		<h1>Antes v1.0</h1>
+		<p>{{ cities | json }}</p>	
+	</div>
+
+	<div class="mapContainer"
+		map-lazy-load="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvc8f2wLp2oBDCFPawvFuoJuIfjo6LYKY"
+		map-lazy-load-params="{{ googleMapsUrl }}">
+		<ng-map default-style="false" center="-33.4378305,-70.65044920000003" zoom="10"></ng-map>
+	</div>
+
+<!-- GOOGLE MAPS API -->
+<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvc8f2wLp2oBDCFPawvFuoJuIfjo6LYKY"></script> -->
+<script src="src/angularjs/angular.min.js"></script>
+<script src="src/ngmap/ng-map.min.js"></script>
+<script src="src/angularjs/app.js"></script>
+
 </body>
 </html>
+	
