@@ -20,5 +20,22 @@ app.controller('antesmap', function($scope, $http, $timeout, NgMap) {
       "name": "Santiago RM",
       "position":[-33.4378305,-70.65044920000003]
   }];
+
+  $scope.places = [];
+  $scope.selectedCity = [];
+  function getPlaces(places) { 
+    $http.get(places).then(function (response) {
+      $scope.places = response.data;
+      $scope.selectedCity = $scope.cities[0];
+    });
+  }
+  getPlaces('places.json');
+
+
+  $scope.place = '';
+  $scope.showDetail = function(e, place) {
+    $scope.place = place;
+    map.showInfoWindow('foo-iw', place.id);
+  };  
   
 });

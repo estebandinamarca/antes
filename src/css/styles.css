@@ -34,8 +34,8 @@ html {
 	right: 0;
 	width: 100%;
 	height: 100%;
-	background: #000;
-	color: #FFF;
+	background: rgba(255, 255, 255, 1);
+	color: #000;
 }
 
 .mapContainer {
