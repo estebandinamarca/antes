@@ -29,7 +29,7 @@ app.controller('antesmap', function($scope, $http, $timeout, NgMap) {
       $scope.selectedCity = $scope.cities[0];
     });
   }
-  getPlaces('places.json');
+  getPlaces('../src/json/places.json');
 
 
   $scope.place = '';
