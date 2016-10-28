@@ -36,6 +36,25 @@ app.controller('antesmap', function($scope, $http, $timeout, NgMap) {
   $scope.showDetail = function(e, place) {
     $scope.place = place;
     $scope.map.showInfoWindow('foo-iw', place.id);
-  };  
+  };
+
+  $scope.hideDetail = function() {
+    map.hideInfoWindow('foo-iw');
+  };
+
+
+  // ABRIR OFF CANVAS - CARGAR INFO PLACE
+  $scope.openClose = '';
+  $scope.overlay = '';
+  $scope.toggleCanvas = function(){
+    if ($scope.openClose === 'slideInLeft'){
+      $scope.openClose = 'slide0utLeft';
+      $scope.overlay = '';
+    } else {
+      $scope.openClose = 'slideInLeft';
+      $scope.overlay = 'show';
+    }
+  };
+
   
 });
