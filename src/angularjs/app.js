@@ -35,7 +35,7 @@ app.controller('antesmap', function($scope, $http, $timeout, NgMap) {
   $scope.place = '';
   $scope.showDetail = function(e, place) {
     $scope.place = place;
-    map.showInfoWindow('foo-iw', place.id);
+    $scope.map.showInfoWindow('foo-iw', place.id);
   };  
   
 });
