@@ -16,6 +16,8 @@
 
 <body ng-app="app" ng-controller="antesmap">
 	<div canvas="container">
+
+		<a class="panelOverlay" ng-class="overlay" ng-click="toggleCanvas();"></a>
 		<div class="intitialLoading" ng-if="pauseLoading">Waiting for 2 seconds to lazy load the maps API via map-lazy-load</div>
 
 		<div class="header">
