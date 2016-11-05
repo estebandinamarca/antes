@@ -21,24 +21,22 @@
 		<div class="intitialLoading" ng-if="pauseLoading">Waiting for 2 seconds to lazy load the maps API via map-lazy-load</div>
 
 		<div class="header">
-			<h1>Antes v1.0</h1>
-			<!-- <p>{{ cities | json }}</p> -->
-			<button ng-repeat="place in places" ng-click="showDetail(e, places[$index]);">{{ place.name }}</button>
+			<h1>antes project</h1>
+			<button ng-repeat="place in places.items" ng-click="showDetail(e, places.items[$index]);">{{ place.fields.name }}</button>
+			<!-- <small>{{ places | json }}</small> -->
 		</div>
 
-		<div class="mapContainer"
-			map-lazy-load="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvc8f2wLp2oBDCFPawvFuoJuIfjo6LYKY"
-			map-lazy-load-params="{{ googleMapsUrl }}">
-			<ng-map default-style="false" center="-33.4378305,-70.65044920000003" zoom="10">
-				<marker id="{{ place.id }}" position="{{ place.position }}" ng-repeat="place in places" on-click="showDetail(place);" icon="{{ place.icon }}"></marker>
-				<info-window max-width="200" id="foo-iw" visible="false" visible-on-marker="{{ $index }}">
+		<div class="mapContainer" map-lazy-load="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvc8f2wLp2oBDCFPawvFuoJuIfjo6LYKY" map-lazy-load-params="{{ googleMapsUrl }}">
+			<ng-map default-style="false" center="{{ selectedCity.position }}" zoom="10">
+				<marker id="{{ place.sys.id }}" position="{{ place.fields.location.lat }},{{ place.fields.location.lon }}" ng-repeat="place in places.items" on-click="showDetail(place);" icon="http:{{ place.fields.icon.data.file.url }}"></marker>
+				<info-window max-width="200" id="iw_id" visible="false" visible-on-marker="{{ $index }}">
 					<div ng-non-bindable="">
 						<div class="infoWinContainer">
 							<div class="infoWinImg">
-								<img class="infoWindImg" ng-src="{{ place.img }}" />
+								<img class="infoWindImg" ng-src="{{ place.fields.icon.data.file.url }}" />
 							</div>
 							<div class="infoWinTxt">
-								<h2>{{ place.name }}</h2>
+								<h2>{{ place.fields.name }}</h2>
 								<a class="btnOpenCanvas" href="" ng-click="toggleCanvas();"><b>Ver detalles ></b></a>
 							</div>
 						</div>
@@ -51,9 +49,8 @@
     <div off-canvas="right overlay animated" ng-class="openClose">
 		<div class="canvasContainer">
 			<h1 ng-click="toggleCanvas();">(X)</h1>
-			<h2>{{ place.name }}</h2>
-			<p>{{ place.description }}</p>
-			<p>{{ place.position }}</p>
+			<h2>{{ place.fields.name }}</h2>
+			<p>{{ place.fields.description }}</p>
 		</div>
     </div>
     <div class="canvasBottom" ng-class="openClose">
