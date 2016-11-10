@@ -226,11 +226,15 @@ a.panelOverlay.show {
   padding: 20px 20px 120px 20px;
 }
 
+
+
+/* INFO WINDOWS MAP */
 .infoWinContainer {
   position: relative;
   width: 300px;
-  height: 70px;
+  height: 200px;
 }
+
 .infoWinImg {
   width: 70px;
   height: 70px;
@@ -270,11 +274,17 @@ img.infoWindImg {
   display: block;
 }
 
-/*
+
 .ng-map-info-window {
   background-color: #000 !important;
   color: #FFF;
 }
+.ng-map-info-window > .gm-style-iw {
+  top: 0!important;
+  left: 0!important;
+  width: 253px!important;
+}
+
 .ng-map-info-window div:first-child > div:nth-child(1) {
   border-top-color: #000 !important;
 }
@@ -284,7 +294,7 @@ img.infoWindImg {
 }
 .ng-map-info-window div:first-child > div:nth-child(4) {
   background-color: transparent !important;
-}*/
+}
 
 
 
