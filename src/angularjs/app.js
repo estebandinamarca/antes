@@ -16,8 +16,8 @@ app.controller('antesmap', function($scope, $http, $timeout, NgMap) {
   // -----------------------------------------
   $scope.hideLoading = true;
   $scope.pauseLoading = '';
-  $timeout(function() { $scope.pauseLoading = 'initialOut' }, 1000);
-  $timeout(function() { $scope.hideLoading = false }, 1500);
+  $timeout(function() { $scope.pauseLoading = 'initialOut' }, 2000);
+  $timeout(function() { $scope.hideLoading = false }, 2500);
 
   // CENTER MAP
   $scope.cities = [{

@@ -18,7 +18,14 @@
 	<div canvas="container">
 
 		<a class="panelOverlay animated" ng-class="overlay" ng-click="toggleCanvas();"></a>
-		<div class="intitialLoading animated" ng-class="pauseLoading" ng-if="hideLoading">Waiting for 2 seconds to lazy load the maps API via map-lazy-load</div>
+		<div class="intitialLoading animated" ng-class="pauseLoading" ng-if="hideLoading">
+			<div class="spinner">
+				<div class="bounce1"></div>
+				<div class="bounce2"></div>
+				<div class="bounce3"></div>
+				<h2 style="text-align: center:">Cargando mapa</h2>
+			</div>
+		</div>
 
 		<div class="header">
 			<h1>antes project</h1>
