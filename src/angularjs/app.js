@@ -14,10 +14,10 @@ app.controller('antesmap', function($scope, $http, $timeout, NgMap) {
   // -----------------------------------------
   // TIMEOUT 2 SECONDS INITIAL LOADING
   // -----------------------------------------
-  $scope.pauseLoading = true;
-  $timeout(function() {
-    $scope.pauseLoading = false;
-  }, 2000);
+  $scope.hideLoading = true;
+  $scope.pauseLoading = '';
+  $timeout(function() { $scope.pauseLoading = 'initialOut' }, 1000);
+  $timeout(function() { $scope.hideLoading = false }, 1500);
 
   // CENTER MAP
   $scope.cities = [{
@@ -125,10 +125,10 @@ app.controller('antesmap', function($scope, $http, $timeout, NgMap) {
   $scope.toggleCanvas = function(){
     if ($scope.openClose === 'slideInLeft'){
       $scope.openClose = 'slide0utLeft';
-      $scope.overlay = '';
+      $scope.overlay = 'opacityOut';
     } else {
       $scope.openClose = 'slideInLeft';
-      $scope.overlay = 'show';
+      $scope.overlay = 'opacityIn show';
     }
   };
 

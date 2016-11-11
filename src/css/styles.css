@@ -36,9 +36,30 @@ html {
 	right: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(255, 255, 255, 1);
+	background: #FFF;
 	color: #000;
+  display: block;
 }
+
+@keyframes initialOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.intitialLoading.initialOut {
+  -webkit-animation-name: initialOut;
+  animation-name: initialOut;
+}
+
+.intitialLoading.hide {
+  width: 0;
+  height: 0;
+}
+
 
 .mapContainer {
 	width: 100%;
@@ -97,20 +118,28 @@ a {
 }
 
 a.panelOverlay {
-  display: none;
+  /*display: none;*/
+  display: block;
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 0;
+  height: 0;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 9998;
-  background: rgba(0,0,0,.6);
+  background: #000;
   cursor: pointer;
+  /*transition-property: opacity;
+  transition-duration: 0.5s;
+  opacity: 0;*/
 }
+
 a.panelOverlay.show {
-  display: block;
+  /*display: block;*/
+  width: 100%;
+  height: 100%;
+  /*opacity: 0.3;*/
 }
 
 /* Off-Canvas */
@@ -155,12 +184,43 @@ a.panelOverlay.show {
 }
 
 [off-canvas*=animated],
-.canvasBottom {
+.canvasBottom,
+a.panelOverlay,
+.intitialLoading {
   -webkit-animation-duration: 400ms;
   animation-duration: 400ms;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
+
+@keyframes opacityIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.6;
+  }
+}
+
+@keyframes opacityOut {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+a.panelOverlay.opacityIn {
+  -webkit-animation-name: opacityIn;
+  animation-name: opacityIn;
+}
+a.panelOverlay.opacityOut {
+  -webkit-animation-name: opacityOut;
+  animation-name: opacityOut;
+}
+
+
 
 @-webkit-keyframes slideInLeft {
   from {
@@ -186,6 +246,8 @@ a.panelOverlay.show {
     visibility: visible;
   }
 }
+
+
 @-webkit-keyframes slideOutLeft {
   from {
     -webkit-transform: translate3d(0, 0, 0);
