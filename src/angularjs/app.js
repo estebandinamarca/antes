@@ -45,6 +45,14 @@ app.controller('antesmap', function($scope, $http, $timeout, NgMap) {
           if ( item.fields.icon.sys.id == asset.sys.id ) {
             item.fields.icon.data = {};
             item.fields.icon.data = asset.fields;
+            //item.fields.cover.data = {};
+            //item.fields.cover.data = asset.fields;
+          }
+          if ( item.fields.cover.sys.id == asset.sys.id ) {
+            item.fields.cover.data = {};
+            item.fields.cover.data = asset.fields;
+            //item.fields.cover.data = {};
+            //item.fields.cover.data = asset.fields;
           }
         });
       });

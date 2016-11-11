@@ -37,17 +37,17 @@
 				
 				<marker id="{{ place.sys.id }}" position="{{ place.fields.location.lat }},{{ place.fields.location.lon }}" ng-repeat="place in places.items" on-click="showDetail(place);" icon="http:{{ place.fields.icon.data.file.url }}" centered="true"></marker>
 				
-				<info-window max-width="200" id="iw_id" visible="false" visible-on-marker="">
-					<div ng-non-bindable="">
-						<div class="infoWinContainer">
+				<info-window max-width="253" id="iw_id" visible="false" visible-on-marker="">
+					<div ng-non-bindable="" class="infoWinContainer">
+						<!-- <div class="infoWinContainer"> -->
 							<div class="infoWinImg">
-								<img class="infoWindImg" ng-src="http:{{ place.fields.icon.data.file.url }}?w=70&h=70" />
+								<img class="infoWindImg" style="background-image: url('http:{{ place.fields.cover.data.file.url }}?w=253&h=253'); background-size: cover; background-position: center;" />
 							</div>
 							<div class="infoWinTxt">
 								<h2>{{ place.fields.name }}</h2>
 								<a class="btnOpenCanvas" href="" ng-click="toggleCanvas();"><b>Ver detalles ></b></a>
 							</div>
-						</div>
+						<!-- </div> -->
 					</div>
 				</info-window>
 

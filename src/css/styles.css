@@ -295,19 +295,19 @@ a.panelOverlay.opacityOut {
 /* INFO WINDOWS MAP */
 .infoWinContainer {
   position: relative;
-  width: 300px;
+  width: 253px;
   height: 200px;
 }
 
 .infoWinImg {
-  width: 70px;
-  height: 70px;
+  width: 253px;
+  height: 100px;
   float: left;
   display: block;
 }
 
 .infoWinTxt {
-  width: 230px;
+  width: 253px;
   height: 70px;
   float: right;
   display: block;
@@ -333,15 +333,16 @@ h2 {
 
 img.infoWindImg {
   margin: 0px;
-  width: 70px;
-  height: 70px;
+  width: 253px;
+  height: 100px;
   display: block;
 }
 
 
 .ng-map-info-window {
-  background-color: #000 !important;
-  color: #FFF;
+  width: 253px!important;
+  /*background-color: #FFF !important;
+  color: #000;*/
 }
 .ng-map-info-window > .gm-style-iw {
   top: 0!important;
@@ -350,14 +351,14 @@ img.infoWindImg {
 }
 
 .ng-map-info-window div:first-child > div:nth-child(1) {
-  border-top-color: #000 !important;
+  /*border-top-color: #000 !important;*/
 }
 .ng-map-info-window div:first-child > div:nth-child(3) div {
-  background-color: transparent !important;
+  /*background-color: transparent !important;*/
   
 }
 .ng-map-info-window div:first-child > div:nth-child(4) {
-  background-color: transparent !important;
+  /*background-color: transparent !important;*/
 }
 
 
