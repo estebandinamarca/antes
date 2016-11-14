@@ -46,6 +46,10 @@ app.controller('antesmap', function($scope, $http, $timeout, NgMap) {
             item.fields.icon.data = {};
             item.fields.icon.data = asset.fields;
           }
+          if ( item.fields.cover.sys.id == asset.sys.id ){
+            item.fields.cover.data = {};
+            item.fields.cover.data = asset.fields;
+          }
         });
       });
 
@@ -109,10 +113,12 @@ app.controller('antesmap', function($scope, $http, $timeout, NgMap) {
     $scope.map.showInfoWindow('iw_id', place.sys.id);
     //$scope.center = $scope.map.getCenter();
   };
+
   $scope.showDetail = function(e, place) {
     $scope.place = place;
     $scope.map.showInfoWindow('iw_id', place.sys.id);
   };
+
   $scope.hideDetail = function() {
     $scope.map.hideInfoWindow('iw_id');
   };
