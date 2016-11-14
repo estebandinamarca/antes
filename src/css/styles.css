@@ -300,14 +300,19 @@ a.panelOverlay.opacityOut {
 }
 
 .infoWinImg {
-  width: 200px;
-  height: 100px;
+  width: 299px;
+  height: 150px;
   float: left;
   display: block;
+  margin: 1px 0px 0px 1px;
 }
 
 .infoWinTxt {
+<<<<<<< HEAD
   width: 200px;
+=======
+  width: 300px;
+>>>>>>> origin/master
   height: 70px;
   float: right;
   display: block;
@@ -340,26 +345,36 @@ img.infoWindImg {
 
 
 .ng-map-info-window {
-  width: 200px!important;
-  /*background-color: #FFF !important;
-  color: #000;*/
+  /*background-color: #000 !important;*/
+  /*color: #FFF;*/
+  width: 300px!important;
+  max-width: 300px!important;
 }
 .ng-map-info-window > .gm-style-iw {
   top: 0!important;
   left: 0!important;
-  width: 200px!important;
+  width: 300px!important;
 }
 
 .ng-map-info-window div:first-child > div:nth-child(1) {
   /*border-top-color: #000 !important;*/
 }
+
+.ng-map-info-window div:first-child > div:nth-child(2) {
+  width: 300px!important;
+  max-width: 300px!important;
+}
+
 .ng-map-info-window div:first-child > div:nth-child(3) div {
   /*background-color: transparent !important;*/
-  
 }
+
 .ng-map-info-window div:first-child > div:nth-child(4) {
   /*background-color: transparent !important;*/
+  width: 300px!important;
+  max-width: 300px!important;
 }
+
 
 
 /* LOADER */
