@@ -131,6 +131,10 @@ app.controller('antesmap', function($scope, $http, $timeout, NgMap) {
     $scope.map.hideInfoWindow('iw_id');
   };
 
+  $scope.alertas = function() {
+    alert('hola!')
+  };
+
   // --------------------------------------------
   // TOGGLE OFF-CANVAS & OVERLAY CSS
   // --------------------------------------------

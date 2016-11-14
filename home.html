@@ -33,7 +33,7 @@
 		</div>
 
 		<div class="mapContainer" map-lazy-load="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvc8f2wLp2oBDCFPawvFuoJuIfjo6LYKY" map-lazy-load-params="{{ googleMapsUrl }}">
-			<ng-map default-style="false" center="{{ selectedCity.position }}" zoom="10" on-click="hideDetail();">
+			<ng-map default-style="false" center="{{ selectedCity.position }}" zoom="10" on-click="hideDetail();" on-dragend="alertas();">
 				
 				<marker id="{{ place.sys.id }}" position="{{ place.fields.location.lat }},{{ place.fields.location.lon }}" ng-repeat="place in places.items" on-click="showDetail(place);" icon="http:{{ place.fields.icon.data.file.url }}" centered="true"></marker>
 				
