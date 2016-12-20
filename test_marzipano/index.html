@@ -16,11 +16,11 @@
 <div id="sceneList">
   <ul class="scenes">
     
-      <a href="#" class="scene" data-id="0-mirador-del-prado">
+      <a href="" target="_self" class="scene" data-id="0-mirador-del-prado">
         <li class="text">Mirador del Prado</li>
       </a>
     
-      <a href="#" class="scene" data-id="1-mirador-la-dormida">
+      <a href="" target="_self" class="scene" data-id="1-mirador-la-dormida">
         <li class="text">Mirador la Dormida</li>
       </a>
     
@@ -31,17 +31,17 @@
   <h1 class="sceneName"></h1>
 </div>
 
-<a href="#" id="autorotateToggle">
+<a href="" id="autorotateToggle">
   <img class="icon off" src="img/play.png">
   <img class="icon on" src="img/pause.png">
 </a>
 
-<a href="#" id="fullscreenToggle">
+<a href="" id="fullscreenToggle">
   <img class="icon off" src="img/fullscreen.png">
   <img class="icon on" src="img/windowed.png">
 </a>
 
-<a href="#" id="sceneListToggle">
+<a href="" id="sceneListToggle">
   <img class="icon off" src="img/expand.png">
   <img class="icon on" src="img/collapse.png">
 </a>
@@ -75,6 +75,16 @@
 
 <script src="data.js"></script>
 <script src="index.js"></script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script type='text/javascript'>
+jQuery(document).ready(function($) {
+
+    $(".scene").click(function(event){
+        event.preventDefault();
+    });
+});
+</script>
 
 </body>
 </html>
