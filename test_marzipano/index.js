@@ -68,10 +68,10 @@
   var scenes = APP_DATA.scenes.map(function(sceneData) {
     var source = Marzipano.ImageUrlSource.fromString(
       //"tiles/" + sceneData.id + "/{z}/{f}/{y}/{x}.jpg",
-      "tiles/" + webpath + "/{z}/{f}/{y}/{x}.jpg",
+      "tiles/" + webhash + "/{z}/{f}/{y}/{x}.jpg",
       //{ cubeMapPreviewUrl: "tiles/" + sceneData.id + "/preview.jpg" });
-      { cubeMapPreviewUrl: "tiles/" + webpath + "/preview.jpg" });
-      alert(webpath);
+      { cubeMapPreviewUrl: "tiles/" + webhash + "/preview.jpg" });
+      alert(webhash);
 
     var geometry = new Marzipano.CubeGeometry(sceneData.levels);
 
