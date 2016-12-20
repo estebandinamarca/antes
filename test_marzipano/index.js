@@ -71,7 +71,7 @@
       //"tiles/" + webhash + "/{z}/{f}/{y}/{x}.jpg",
       { cubeMapPreviewUrl: "tiles/" + sceneData.id + "/preview.jpg" });
       //{ cubeMapPreviewUrl: "tiles/" + webhash + "/preview.jpg" });
-      alert(webhash);
+      //alert(webhash);
 
     var geometry = new Marzipano.CubeGeometry(sceneData.levels);
 
