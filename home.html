@@ -20,9 +20,8 @@
 		<a class="panelOverlay" ng-class="overlay" ng-click="toggleCanvas();"></a>
 		<div class="intitialLoading" ng-if="pauseLoading">Waiting for 2 seconds to lazy load the maps API via map-lazy-load</div>
 
-		<div class="header">
+		<!-- <div class="header">
 			<h1>Antes v1.0</h1>
-			<!-- <p>{{ cities | json }}</p> -->
 			<button ng-repeat="place in places" ng-click="showDetail(e, places[$index]);">{{ place.name }}</button>
 		</div>
 
@@ -45,7 +44,31 @@
 					</div>
 				</info-window>
 			</ng-map>
-		</div>
+		</div> -->
+	<div class="header">
+		<h1>Antes v1.0</h1>
+		<button ng-click="initMap('foo')">Init Map</button>
+		<p>{{ cities | json }}</p>	
+	</div>
+
+	<!-- <div class="mapContainer"> -->
+	<div class="mapContainer" map-lazy-load="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvc8f2wLp2oBDCFPawvFuoJuIfjo6LYKY" map-lazy-load-params="{{ googleMapsUrl }}">
+		<ng-map default-style="false" center="-33.4378305,-70.65044920000003" zoom="10">	
+			<!-- <marker id="{{ place.id }}" position="{{ place.position }}" ng-repeat="place in places" on-click="showDetail(place);" icon="{{ place.icon }}"></marker>
+			<info-window max-width="200" id="foo-iw" visible="false" visible-on-marker="{{ $index }}">
+				<div ng-non-bindable="">
+					<div class="infoWinContainer">
+						<div class="infoWinImg">
+							<img class="infoWindImg" ng-src="{{ place.img }}" />
+						</div>
+						<div class="infoWinTxt">
+							<h2>{{ place.name }}</h2>
+							<a class="btnOpenCanvas" href="" ng-click="toggleCanvas();"><b>Ver detalles ></b></a>
+						</div>
+					</div>
+				</div>
+			</info-window> -->
+		</ng-map>
 	</div>
 
     <div off-canvas="right overlay animated" ng-class="openClose">

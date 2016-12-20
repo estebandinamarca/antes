@@ -2,15 +2,14 @@
 var app = angular.module('app', ['ngMap']);
 
 app.controller('antesmap', function($scope, $http, $timeout, NgMap) {
-  
+
   NgMap.getMap().then(function(evtMap) {
     $scope.map = evtMap;
   });
 
+  // TIMEOUT 2 SECONDS INITIAL LOADING
   $scope.googleMapsUrl = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAvc8f2wLp2oBDCFPawvFuoJuIfjo6LYKY';
   $scope.pauseLoading = true;
-
-  // TIMEOUT 2 SECONDS INITIAL LOADING
   $timeout(function() {
     $scope.pauseLoading = false;
   }, 2000);
@@ -29,7 +28,7 @@ app.controller('antesmap', function($scope, $http, $timeout, NgMap) {
       $scope.selectedCity = $scope.cities[0];
     });
   }
-  getPlaces('../src/json/places.json');
+  //getPlaces('../src/json/places.json');
 
 
   $scope.place = '';
@@ -55,6 +54,8 @@ app.controller('antesmap', function($scope, $http, $timeout, NgMap) {
       $scope.overlay = 'show';
     }
   };
+
+  };  
 
   
 });
