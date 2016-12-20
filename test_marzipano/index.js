@@ -6,6 +6,8 @@
   var screenfull = window.screenfull;
   var APP_DATA = window.APP_DATA;
 
+  var webhash = window.location.hash.substring(1);
+
   // Grab elements from DOM.
   var panoElement = document.querySelector('#pano');
   var sceneNameElement = document.querySelector('#titleBar .sceneName');
@@ -64,8 +66,10 @@
   // Create scenes.
   var scenes = APP_DATA.scenes.map(function(sceneData) {
     var source = Marzipano.ImageUrlSource.fromString(
-      "tiles/" + sceneData.id + "/{z}/{f}/{y}/{x}.jpg",
-      { cubeMapPreviewUrl: "tiles/" + sceneData.id + "/preview.jpg" });
+      //"tiles/" + sceneData.id + "/{z}/{f}/{y}/{x}.jpg",
+      "tiles/" + webhash + "/{z}/{f}/{y}/{x}.jpg",
+      //{ cubeMapPreviewUrl: "tiles/" + sceneData.id + "/preview.jpg" });
+      { cubeMapPreviewUrl: "tiles/" + webhash + "/preview.jpg" });
     var geometry = new Marzipano.CubeGeometry(sceneData.levels);
 
     var limiter = Marzipano.RectilinearView.limit.traditional(sceneData.faceSize, 100*Math.PI/180, 120*Math.PI/180);
