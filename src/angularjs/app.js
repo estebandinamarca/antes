@@ -54,10 +54,10 @@ app.controller('antesmap', function($scope, $http, $timeout, NgMap) {
             //item.fields.cover.data = {};
             //item.fields.cover.data = asset.fields;
           }
-          if ( item.fields.cover.sys.id == asset.sys.id ){
-            item.fields.cover.data = {};
-            item.fields.cover.data = asset.fields;
-          }
+          // if ( item.fields.cover.sys.id == asset.sys.id ){
+          //   item.fields.cover.data = {};
+          //   item.fields.cover.data = asset.fields;
+          // }
         });
       });
 
