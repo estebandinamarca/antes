@@ -3,5 +3,5 @@
 	<h1>Rutas</h1>
 	<h2>{{ pageClass }}</h2>
 	<hr>
-	<p ng-repeat="item in items"><a ng-href="#{{ item.category }}?region=noregion">{{ item.title }}</a></p>
+	<p ng-repeat="item in items"><a ng-href="#place?category={{ item.category }}">{{ item.title }} - {{ item.category }}</a></p>
 </div>
