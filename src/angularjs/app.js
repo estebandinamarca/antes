@@ -46,6 +46,11 @@ app.controller('parquesController', function($scope) {
     $scope.items = [
       { title: 'parque_algo_00_parques', id: 0, region: 'rm', category: 'parques' }
     ];
+    if ( $location.search().region == 'rm' ) {
+      $scope.pageClass = 'parques-rm';
+    } else {
+      $scope.pageClass = 'parques';
+    }
 });
 
 app.controller('arqueologicosController', function($scope) {
