@@ -1,9 +1,8 @@
 <div class="main">
-
 	<h1>Inicio</h1>
 	<h2>{{ pageClass }}</h2>
 	<hr>
-	<p ng-repeat="item in places"><a ng-href="#place?category={{ item.category }}">{{ item.title }} - {{ item.category }}</a></p>
+	<p ng-repeat="item in places.items"><a ng-href="#place?category={{ place.fields.category }}">{{ place.fields.name }} - {{ place.fields.category }}</a></p>
 	<a href="" ng-click="changeLocation('rm');">FUNCTION QUE AGREGA LOCATION SEARCH </a>
 	<p>{{ testing }}</p>
 </div>
