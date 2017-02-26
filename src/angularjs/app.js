@@ -87,6 +87,12 @@ app.controller('inicioController', function($scope, $location) {
 
     }
 
+
+    $scope.changeLocation = function (region) {
+      console.log(region);
+      $location.search('region', region);
+    }
+
 });
 
 app.controller('placeController', function($scope, $location) {
