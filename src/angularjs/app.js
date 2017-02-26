@@ -1,61 +1,44 @@
 //'use strict';
-var app = angular.module('app', ['ngMap']);
+var app = angular.module('app', ['ngRoute', 'ngAnimate']);
 
-app.controller('antesmap', function($scope, $http, $timeout, NgMap) {
+app.controller('antesmap', function($scope) {
 
-  NgMap.getMap().then(function(evtMap) {
-    $scope.map = evtMap;
+
+  // HTML5 Mode
+  app.config(function ($locationProvider) {
+    $locationProvider.html5Mode({
+      enabled: true,
+      requireBase: true
+    });
   });
 
-  // TIMEOUT 2 SECONDS INITIAL LOADING
-  $scope.googleMapsUrl = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAvc8f2wLp2oBDCFPawvFuoJuIfjo6LYKY';
-  $scope.pauseLoading = true;
-  $timeout(function() {
-    $scope.pauseLoading = false;
-  }, 2000);
+  app.config(function($routeProvider) {
+      $routeProvider
+        .when('/', {
+          templateUrl: 'page-home.html',
+              controller: 'mainController'
+        })
+        .when('/about', {
+          templateUrl: 'page-about.html',
+              controller: 'aboutController'
+        })
+        .when('/contact', {
+          templateUrl: 'page-contact.html',
+              controller: 'contactController'
+        });
 
-  $scope.cities = [{
-      "id":"1",
-      "name": "Santiago RM",
-      "position":[-33.4378305,-70.65044920000003]
-  }];
+  });
 
-  $scope.places = [];
-  $scope.selectedCity = [];
-  function getPlaces(places) { 
-    $http.get(places).then(function (response) {
-      $scope.places = response.data;
-      $scope.selectedCity = $scope.cities[0];
-    });
-  }
-  //getPlaces('../src/json/places.json');
+  app.controller('mainController', function($scope) {
+      $scope.pageClass = 'page-home';
+  });
 
+  app.controller('aboutController', function($scope) {
+      $scope.pageClass = 'page-about';
+  });
 
-  $scope.place = '';
-  $scope.showDetail = function(e, place) {
-    $scope.place = place;
-    $scope.map.showInfoWindow('foo-iw', place.id);
-  };
-
-  $scope.hideDetail = function() {
-    map.hideInfoWindow('foo-iw');
-  };
-
-
-  // ABRIR OFF CANVAS - CARGAR INFO PLACE
-  $scope.openClose = '';
-  $scope.overlay = '';
-  $scope.toggleCanvas = function(){
-    if ($scope.openClose === 'slideInLeft'){
-      $scope.openClose = 'slide0utLeft';
-      $scope.overlay = '';
-    } else {
-      $scope.openClose = 'slideInLeft';
-      $scope.overlay = 'show';
-    }
-  };
-
-  };  
-
+  app.controller('contactController', function($scope) {
+      $scope.pageClass = 'page-contact';
+  });
   
 });
