@@ -34,10 +34,20 @@ app.config(function($routeProvider, $locationProvider) {
 
 app.controller('inicioController', function($scope) {
     $scope.pageClass = 'inicio';
+    $scope.items = [
+      { title: 'algo_inicio_0', id: 0 },
+      { title: 'algo_inicio_1', id: 1 },
+      { title: 'algo_inicio_2', id: 2 }
+    ];
 });
 
 app.controller('parquesController', function($scope) {
     $scope.pageClass = 'parques';
+    $scope.items = [
+      { title: 'algo_inicio_00', id: 0 },
+      { title: 'algo_inicio_11', id: 1 },
+      { title: 'algo_inicio_22', id: 2 }
+    ];
 });
 
 app.controller('arqueologicosController', function($scope) {
