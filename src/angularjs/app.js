@@ -1,10 +1,10 @@
 //'use strict';
 var app = angular.module('app', ['ngRoute', 'ngAnimate']);
 
-$provide.decorator('$sniffer', function($delegate) {
-  $delegate.history = false;
-  return $delegate;
-});
+// $provide.decorator('$sniffer', function($delegate) {
+//   $delegate.history = false;
+//   return $delegate;
+// });
 
 app.config(function($routeProvider, $locationProvider) {
     $routeProvider
