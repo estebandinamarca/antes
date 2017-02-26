@@ -18,7 +18,7 @@
 	<div class="aside" ng-controller="menuController">
 		<ul>
 			<li><a href="/#/" ng-class="{ active: isActive('/') }">Inicio</a></li>
-			<li><a href="#parques" ng-class="{ active: isActive('/parques'), active: isActiveCat('parques') }">Parques nacionales</a></li>
+			<li><a href="#parques" ng-class="{ active: isActive('/parques') || active: isActiveCat('parques') }">Parques nacionales</a></li>
 			<li><a href="#arqueologicos" ng-class="{ active: isActive('/arqueologicos')}">Sitios arqueologicos</a></li>
 			<li><a href="#rutas" ng-class="{ active: isActive('/rutas')}">Rutas Patrimoniales</a></li>
 		</ul>
