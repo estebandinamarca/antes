@@ -35,6 +35,11 @@ app.controller('menuController', function($scope, $location) {
   $scope.isActive = function (viewLocation) { 
     return viewLocation === $location.path();
   };
+
+  $scope.isActiveCat = function (viewLocation) { 
+    return viewLocation === $location.search().category;
+  };
+
 });
 
 app.controller('inicioController', function($scope, $location) {
