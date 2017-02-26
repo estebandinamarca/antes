@@ -39,18 +39,49 @@ app.controller('menuController', function($scope, $location) {
 
 app.controller('inicioController', function($scope, $location) {
 
-    // if ( $location.search().category == 'parques' ) {
-    //   $scope.pageClass = 'parques';
-    // } else {
-    //   $scope.pageClass = 'parques';
-    // }
+    if ( $location.path() == '/parques' ) {
+      $scope.pageClass = 'parques';
+      $scope.items = [
+        { title: 'Place 1', id: 0, region: 'rm', category: 'parques' },
+        { title: 'Place 2', id: 1, region: 'xi', category: 'parques' },
+        { title: 'Place 3', id: 2, region: 'v', category: 'parques' }
+      ];
 
-    $scope.pageClass = 'inicio';
-    $scope.items = [
-      { title: 'Parques y Reservas', id: 0, region: 'rm', category: 'parques' },
-      { title: 'Arqueología', id: 1, region: 'xi', category: 'arqueologicos' },
-      { title: 'Paleontología', id: 2, region: 'v', category: 'rutas' }
-    ];
+    } else if ( $location.path() == '/rutas' ) {
+
+      $scope.pageClass = 'parques';
+      $scope.items = [
+        { title: 'Place 1', id: 0, region: 'rm', category: 'rutas' },
+        { title: 'Place 2', id: 1, region: 'xi', category: 'rutas' },
+        { title: 'Place 3', id: 2, region: 'v', category: 'rutas' }
+      ];
+
+    } else if ( $location.path() == '/arqueologicos' ) {
+      
+      $scope.pageClass = 'arqueologicos';
+      $scope.items = [
+        { title: 'Place 1', id: 0, region: 'rm', category: 'arqueologicos' },
+        { title: 'Place 2', id: 1, region: 'xi', category: 'arqueologicos' },
+        { title: 'Place 3', id: 2, region: 'v', category: 'arqueologicos' }
+      ];
+
+    } else {
+
+      $scope.pageClass = 'todo';
+      $scope.items = [
+        { title: 'Place 1', id: 0, region: 'rm', category: 'arqueologicos' },
+        { title: 'Place 2', id: 1, region: 'xi', category: 'arqueologicos' },
+        { title: 'Place 3', id: 2, region: 'v', category: 'arqueologicos' },
+        { title: 'Place 1', id: 0, region: 'rm', category: 'rutas' },
+        { title: 'Place 2', id: 1, region: 'xi', category: 'rutas' },
+        { title: 'Place 3', id: 2, region: 'v', category: 'rutas' },
+        { title: 'Place 1', id: 0, region: 'rm', category: 'parques' },
+        { title: 'Place 2', id: 1, region: 'xi', category: 'parques' },
+        { title: 'Place 3', id: 2, region: 'v', category: 'parques' }
+      ];
+
+    }
+
 });
 
 app.controller('placeController', function($scope, $location) {
