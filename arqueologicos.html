@@ -3,5 +3,5 @@
 	<h1>Arqueológicos</h1>
 	<h2>{{ pageClass }}</h2>
 	<hr>
-	<p ng-repeat="item in places.items"><a ng-href="#place?category={{ place.fields.category }}">{{ place.fields.name }} - {{ place.fields.category }}</a></p>
+	<p ng-repeat="place in places.items"><a ng-href="#place?category={{ place.fields.category }}">{{ place.fields.name }} - {{ place.fields.category }}</a></p>
 </div>
