@@ -10,19 +10,19 @@ app.config(function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'inicio.html',
-            controller: 'mainController'
+            controller: 'inicioController'
       })
       .when('/parques', {
         templateUrl: 'parques.html',
-            controller: 'aboutController'
+            controller: 'parquesController'
       })
       .when('/arqueologicos', {
         templateUrl: 'arqueologicos.html',
-            controller: 'aboutController'
+            controller: 'arqueologicosController'
       })
       .when('/rutas', {
         templateUrl: 'rutas.html',
-            controller: 'contactController'
+            controller: 'rutasController'
       });
     $locationProvider
       .html5Mode({
@@ -31,18 +31,18 @@ app.config(function($routeProvider, $locationProvider) {
       });
 });
 
-app.controller('mainController', function($scope) {
+app.controller('inicioController', function($scope) {
+    $scope.pageClass = 'inicio';
+});
+
+app.controller('parquesController', function($scope) {
     $scope.pageClass = 'parques';
 });
 
-app.controller('aboutController', function($scope) {
+app.controller('arqueologicosController', function($scope) {
     $scope.pageClass = 'arqueologicos';
 });
 
-app.controller('contactController', function($scope) {
-    $scope.pageClass = 'rutas';
-});
-
-app.controller('contactController', function($scope) {
+app.controller('rutasController', function($scope) {
     $scope.pageClass = 'rutas';
 });
