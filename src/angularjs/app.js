@@ -42,63 +42,98 @@ app.controller('menuController', function($scope, $location) {
 
 });
 
-app.controller('inicioController', function($scope, $location) {
+app.controller('inicioController', function($scope, $http, $location) {
 
-    if ( $location.search().region == 'rm' ) {
-      $scope.testing = 'region rm';
-    } else {
-      $scope.testing = 'region empty';
-    }
+  // -----------------------------------------
+  // SPACE ID + ACCESS TOKEN + CONTENT TYPE + INFO TYPE
+  // -----------------------------------------
+  $scope.spaceId = ['exxl6su6yxqc'];
+  $scope.accessToken = ['38f9d13b1d29e3fce9d65ec6ccd3bb5f13e88f14e88c3e47a162bee0ea170266'];
+  $scope.contentType = ['&content_type=place'];
+  $scope.infoType = ['entries'];
 
+  // -----------------------------------------
+  // LOCATIONS SEARCH REGION TEST
+  // -----------------------------------------
+  if ( $location.search().region == 'rm' ) {
+    $scope.testing = 'region rm';
+  } else {
+    $scope.testing = 'region empty';
+  }
 
-    if ( $location.path() == '/parques' ) {
-      $scope.pageClass = 'parques';
-      $scope.items = [
-        { title: 'Place 1', id: 0, region: 'rm', category: 'parques' },
-        { title: 'Place 2', id: 1, region: 'xi', category: 'parques' },
-        { title: 'Place 3', id: 2, region: 'v', category: 'parques' }
-      ];
+  // -----------------------------------------
+  // LOCATION PATH CATEGORY
+  // -----------------------------------------
+  if ( $location.path() == '/parques' ) {
 
-    } else if ( $location.path() == '/rutas' ) {
+    $scope.pageClass = 'parques';
+    $scope.category = "Parque Nacional";
 
-      $scope.pageClass = 'parques';
-      $scope.items = [
-        { title: 'Place 1', id: 0, region: 'rm', category: 'rutas' },
-        { title: 'Place 2', id: 1, region: 'xi', category: 'rutas' },
-        { title: 'Place 3', id: 2, region: 'v', category: 'rutas' }
-      ];
+  } else if ( $location.path() == '/rutas' ) {
 
-    } else if ( $location.path() == '/arqueologicos' ) {
+    $scope.pageClass = 'rutas (Monumento Nacional)';
+    $scope.category = "Monumento Nacional";
+
+  } else if ( $location.path() == '/arqueologicos' ) {
+
+    $scope.pageClass = 'arqueologicos (Patrimonio de la Humanidad)';
+    $scope.category = 'Patrimonio de la Humanidad';
+
+  } else {
+
+    $scope.pageClass = 'todo';
+    $scope.category = '';
+
+  }
+
+  // -----------------------------------------
+  // LIMIT TO
+  // -----------------------------------------
+  $scope.limitTo = ['&limit=10'];
+  $scope.addLimitTo = function(limitTo) {
+    $scope.limitTo = [];
+    $scope.limitTo.push(limitTo);
+  };
+
+  // -----------------------------------------
+  // GET JSON PLACES
+  // -----------------------------------------
+  $scope.places = [];
+  function getPlaces() {
+    $scope.jsonUrl = "https://cdn.contentful.com/spaces/"+ $scope.spaceId +"/"+ $scope.infoType +"?access_token="+ $scope.accessToken + $scope.limitTo + $scope.contentType + "&fields.category=" + $scope.category;
+    $http.get($scope.jsonUrl).then(function (response) {
+
+      console.log('$scope.jsonUrl :' + $scope.jsonUrl);
+
+      // ADD ICON INFO AND URL
+      angular.forEach(response.data.items, function(item) {
+        angular.forEach(response.data.includes.Asset, function(asset) {
+          if ( item.fields.icon.sys.id == asset.sys.id ) {
+            item.fields.icon.data = {};
+            item.fields.icon.data = asset.fields;
+          }
+          if ( item.fields.cover.sys.id == asset.sys.id ) {
+            item.fields.cover.data = {};
+            item.fields.cover.data = asset.fields;
+          }
+        });
+      });
+
+      $scope.places = response.data;
       
-      $scope.pageClass = 'arqueologicos';
-      $scope.items = [
-        { title: 'Place 1', id: 0, region: 'rm', category: 'arqueologicos' },
-        { title: 'Place 2', id: 1, region: 'xi', category: 'arqueologicos' },
-        { title: 'Place 3', id: 2, region: 'v', category: 'arqueologicos' }
-      ];
+    });
+  }
 
-    } else {
+  // -----------------------------------------
+  // TEST CHANGE LOCATION
+  // -----------------------------------------
+  $scope.changeLocation = function(region) {
+    console.log(region);
+    $location.search('region', region);
+    $scope.testing = 'region rm';
+  }
 
-      $scope.pageClass = 'todo';
-      $scope.items = [
-        { title: 'Place 1', id: 0, region: 'rm', category: 'arqueologicos' },
-        { title: 'Place 2', id: 1, region: 'xi', category: 'arqueologicos' },
-        { title: 'Place 3', id: 2, region: 'v', category: 'arqueologicos' },
-        { title: 'Place 1', id: 0, region: 'rm', category: 'rutas' },
-        { title: 'Place 2', id: 1, region: 'xi', category: 'rutas' },
-        { title: 'Place 3', id: 2, region: 'v', category: 'rutas' },
-        { title: 'Place 1', id: 0, region: 'rm', category: 'parques' },
-        { title: 'Place 2', id: 1, region: 'xi', category: 'parques' },
-        { title: 'Place 3', id: 2, region: 'v', category: 'parques' }
-      ];
-
-    }
-
-    $scope.changeLocation = function (region) {
-      console.log(region);
-      $location.search('region', region);
-      $scope.testing = 'region rm';
-    }
+  getPlaces();
 
 });
 
