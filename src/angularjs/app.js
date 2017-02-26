@@ -35,18 +35,16 @@ app.config(function($routeProvider, $locationProvider) {
 app.controller('inicioController', function($scope) {
     $scope.pageClass = 'inicio';
     $scope.items = [
-      { title: 'algo_inicio_0', id: 0 },
-      { title: 'algo_inicio_1', id: 1 },
-      { title: 'algo_inicio_2', id: 2 }
+      { title: 'parque_algo_00_parques', id: 0, region: 'rm', category: 'parques' },
+      { title: 'parque_algo_01_arqueologicos', id: 1, region: 'xi', category: 'arqueologicos' },
+      { title: 'parque_algo_02_rutas', id: 2, region: 'v', category: 'rutas' }
     ];
 });
 
 app.controller('parquesController', function($scope) {
     $scope.pageClass = 'parques';
     $scope.items = [
-      { title: 'algo_inicio_00', id: 0 },
-      { title: 'algo_inicio_11', id: 1 },
-      { title: 'algo_inicio_22', id: 2 }
+      { title: 'parque_algo_00_parques', id: 0, region: 'rm', category: 'parques' }
     ];
 });
 
