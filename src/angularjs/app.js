@@ -44,6 +44,13 @@ app.controller('menuController', function($scope, $location) {
 
 app.controller('inicioController', function($scope, $location) {
 
+    if ( $location.search().region == 'rm' ) {
+      $scope.testing = 'region rm';
+    } else {
+      $scope.testing = 'region empty';
+    }
+
+
     if ( $location.path() == '/parques' ) {
       $scope.pageClass = 'parques';
       $scope.items = [
@@ -87,10 +94,10 @@ app.controller('inicioController', function($scope, $location) {
 
     }
 
-
     $scope.changeLocation = function (region) {
       console.log(region);
       $location.search('region', region);
+      $scope.testing = 'region rm';
     }
 
 });
