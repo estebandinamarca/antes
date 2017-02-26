@@ -10,25 +10,26 @@ app.config(function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'inicio.html',
-            controller: 'inicioController'
+        controller: 'inicioController'
       })
       .when('/parques', {
         templateUrl: 'parques.html',
-            controller: 'parquesController'
+        controller: 'parquesController'
       })
       .when('/arqueologicos', {
         templateUrl: 'arqueologicos.html',
-            controller: 'arqueologicosController'
+        controller: 'arqueologicosController'
       })
       .when('/rutas', {
         templateUrl: 'rutas.html',
-            controller: 'rutasController'
+        controller: 'rutasController'
       });
     $locationProvider
       .html5Mode({
         enabled: true,
-        requireBase: true
-      });
+        requireBase: true,
+      })
+      .hashPrefix('!');
 });
 
 app.controller('inicioController', function($scope) {
