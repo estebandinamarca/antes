@@ -15,23 +15,21 @@
 
 <body ng-app="app">
 
-<div class="aside">
-	<ul>
-		<li><a href="/#/">Inicio</a></li>
-		<li><a href="#parques">Parques nacionales</a></li>
-		<li><a href="#arqueologicos">Sitios arqueologicos</a></li>
-		<li><a href="#rutas">Rutas Patrimoniales</a></li>
-	</ul>
-</div>
+	<div class="aside" ng-controller="menuController">
+		<ul>
+			<li><a href="/#/" ng-class="{ active: isActive('/')}">Inicio</a></li>
+			<li><a href="#parques" ng-class="{ active: isActive('#parques')}">Parques nacionales</a></li>
+			<li><a href="#arqueologicos" ng-class="{ active: isActive('/#arqueologicos')}">Sitios arqueologicos</a></li>
+			<li><a href="#rutas" ng-class="{ active: isActive('/#/rutas')}">Rutas Patrimoniales</a></li>
+		</ul>
+	</div>
 
-<div class="main {{ pageClass }}" ng-view></div>
+	<div class="main {{ pageClass }}" ng-view></div>
 
-
-
-<script src="src/angularjs/angular.min.js"></script>
-<script src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
-<script src="https://code.angularjs.org/1.5.8/angular-animate.min.js"></script>
-<script src="src/angularjs/app.js"></script>
+	<script src="src/angularjs/angular.min.js"></script>
+	<script src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
+	<script src="https://code.angularjs.org/1.5.8/angular-animate.min.js"></script>
+	<script src="src/angularjs/app.js"></script>
 
 </body>
 </html>

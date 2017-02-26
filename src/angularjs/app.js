@@ -1,10 +1,5 @@
-//'use strict';
+'use strict';
 var app = angular.module('app', ['ngRoute', 'ngAnimate']);
-
-// $provide.decorator('$sniffer', function($delegate) {
-//   $delegate.history = false;
-//   return $delegate;
-// });
 
 app.config(function($routeProvider, $locationProvider) {
     $routeProvider
@@ -14,15 +9,19 @@ app.config(function($routeProvider, $locationProvider) {
       })
       .when('/parques', {
         templateUrl: 'parques.html',
-        controller: 'parquesController'
+        controller: 'inicioController'
       })
       .when('/arqueologicos', {
         templateUrl: 'arqueologicos.html',
-        controller: 'arqueologicosController'
+        controller: 'inicioController'
       })
       .when('/rutas', {
         templateUrl: 'rutas.html',
-        controller: 'rutasController'
+        controller: 'inicioController'
+      })
+      .when('/place', {
+        templateUrl: 'place.html',
+        controller: 'placeController'
       });
     // $locationProvider
     //   .html5Mode({
@@ -32,31 +31,65 @@ app.config(function($routeProvider, $locationProvider) {
     //   .hashPrefix('!');
 });
 
+app.controller('menuController', function($scope, $location) { 
+  $scope.isActive = function (viewLocation) { 
+    return viewLocation === $location.path();
+  };
+});
+
 app.controller('inicioController', function($scope, $location) {
+
+    // if ( $location.search().category == 'parques' ) {
+    //   $scope.pageClass = 'parques';
+    // } else {
+    //   $scope.pageClass = 'parques';
+    // }
+
     $scope.pageClass = 'inicio';
     $scope.items = [
-      { title: 'parque_algo_00_parques', id: 0, region: 'rm', category: 'parques' },
-      { title: 'parque_algo_01_arqueologicos', id: 1, region: 'xi', category: 'arqueologicos' },
-      { title: 'parque_algo_02_rutas', id: 2, region: 'v', category: 'rutas' }
+      { title: 'Parques y Reservas', id: 0, region: 'rm', category: 'parques' },
+      { title: 'Arqueología', id: 1, region: 'xi', category: 'arqueologicos' },
+      { title: 'Paleontología', id: 2, region: 'v', category: 'rutas' }
     ];
 });
 
-app.controller('parquesController', function($scope, $location) {
-    $scope.pageClass = 'parques';
-    $scope.items = [
-      { title: 'parque_algo_00_parques', id: 0, region: 'rm', category: 'parques' }
+app.controller('placeController', function($scope, $location) {
+    
+    $scope.pageClass = 'place';
+
+    $scope.place = [
+      {
+        id: 0,
+        title: 'Parque Nacional Torres del Paine',
+        region: 'xii',
+        category: 'parques',
+        description: 'Este es un lugar muy lindo.'
+      }
     ];
-    if ( $location.search().region == 'rm' ) {
-      $scope.pageClass = 'parques-rm';
-    } else {
-      $scope.pageClass = 'parques';
-    }
+
+    // if ( $location.search().region == 'rm' ) {
+    //   $scope.pageClass = 'parques-rm';
+    // } else {
+    //   $scope.pageClass = 'parques';
+    // }
 });
 
-app.controller('arqueologicosController', function($scope) {
-    $scope.pageClass = 'arqueologicos';
-});
+// app.controller('parquesController', function($scope, $location) {
+//     $scope.pageClass = 'parques';
+//     $scope.items = [
+//       { title: 'parque_algo_00_parques', id: 0, region: 'rm', category: 'parques' }
+//     ];
+//     if ( $location.search().region == 'rm' ) {
+//       $scope.pageClass = 'parques-rm';
+//     } else {
+//       $scope.pageClass = 'parques';
+//     }
+// });
 
-app.controller('rutasController', function($scope) {
-    $scope.pageClass = 'rutas';
-});
+// app.controller('arqueologicosController', function($scope) {
+//     $scope.pageClass = 'arqueologicos';
+// });
+
+// app.controller('rutasController', function($scope) {
+//     $scope.pageClass = 'rutas';
+// });

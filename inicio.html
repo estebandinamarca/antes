@@ -3,5 +3,6 @@
 	<h1>Inicio</h1>
 	<h2>{{ pageClass }}</h2>
 	<hr>
-	<p ng-repeat="item in items"><a ng-href="#{{ item.category }}?region={{ item.region }}">{{ item.title }}</a></p>
+	<p ng-repeat="item in items"><a ng-href="#{{ item.category }}?category={{ item.category }}">{{ item.title }}</a></p>
+	
 </div>
