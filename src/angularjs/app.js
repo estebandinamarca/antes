@@ -67,17 +67,17 @@ app.controller('inicioController', function($scope, $http, $location) {
   if ( $location.path() == '/parques' ) {
 
     $scope.pageClass = 'parques';
-    $scope.category = "Parque Nacional";
+    $scope.category = "Parque%20Nacional";
 
   } else if ( $location.path() == '/rutas' ) {
 
     $scope.pageClass = 'rutas (Monumento Nacional)';
-    $scope.category = "Monumento Nacional";
+    $scope.category = "Monumento%20Nacional";
 
   } else if ( $location.path() == '/arqueologicos' ) {
 
     $scope.pageClass = 'arqueologicos (Patrimonio de la Humanidad)';
-    $scope.category = 'Patrimonio de la Humanidad';
+    $scope.category = 'Patrimonio%20de%20la%20Humanidad';
 
   } else {
 
