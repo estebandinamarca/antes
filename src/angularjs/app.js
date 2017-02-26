@@ -32,7 +32,7 @@ app.config(function($routeProvider, $locationProvider) {
     //   .hashPrefix('!');
 });
 
-app.controller('inicioController', function($scope) {
+app.controller('inicioController', function($scope, $location) {
     $scope.pageClass = 'inicio';
     $scope.items = [
       { title: 'parque_algo_00_parques', id: 0, region: 'rm', category: 'parques' },
@@ -41,7 +41,7 @@ app.controller('inicioController', function($scope) {
     ];
 });
 
-app.controller('parquesController', function($scope) {
+app.controller('parquesController', function($scope, $location) {
     $scope.pageClass = 'parques';
     $scope.items = [
       { title: 'parque_algo_00_parques', id: 0, region: 'rm', category: 'parques' }
