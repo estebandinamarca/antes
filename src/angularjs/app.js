@@ -15,30 +15,34 @@ app.controller('antesmap', function($scope) {
   app.config(function($routeProvider) {
       $routeProvider
         .when('/', {
-          templateUrl: 'page-home.html',
+          templateUrl: 'inicio.html',
               controller: 'mainController'
         })
-        .when('/about', {
-          templateUrl: 'page-about.html',
+        .when('/parques', {
+          templateUrl: 'parques.html',
               controller: 'aboutController'
         })
-        .when('/contact', {
-          templateUrl: 'page-contact.html',
+        .when('/arqueologicos', {
+          templateUrl: 'arqueologicos.html',
+              controller: 'aboutController'
+        })
+        .when('/rutas', {
+          templateUrl: 'rutas.html',
               controller: 'contactController'
         });
 
   });
 
   app.controller('mainController', function($scope) {
-      $scope.pageClass = 'page-home';
+      $scope.pageClass = 'parques';
   });
 
   app.controller('aboutController', function($scope) {
-      $scope.pageClass = 'page-about';
+      $scope.pageClass = 'arqueologicos';
   });
 
   app.controller('contactController', function($scope) {
-      $scope.pageClass = 'page-contact';
+      $scope.pageClass = 'rutas';
   });
   
 });
