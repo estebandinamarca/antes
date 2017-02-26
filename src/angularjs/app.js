@@ -24,12 +24,12 @@ app.config(function($routeProvider, $locationProvider) {
         templateUrl: 'rutas.html',
         controller: 'rutasController'
       });
-    $locationProvider
-      .html5Mode({
-        enabled: true,
-        requireBase: true
-      })
-      .hashPrefix('!');
+    // $locationProvider
+    //   .html5Mode({
+    //     enabled: true,
+    //     requireBase: true
+    //   })
+    //   .hashPrefix('!');
 });
 
 app.controller('inicioController', function($scope) {
