@@ -48,7 +48,7 @@ app.controller('inicioController', function($scope, $http, $location, $timeout) 
   $scope.fade = true;
   $timeout(function () {
     $scope.fade = false;
-  }, 700);
+  }, 600);
 
   // $scope.animation = function () {
   //   $scope.fade = 'on';
@@ -151,7 +151,7 @@ app.controller('placeController', function($scope, $http, $location, $timeout) {
   $scope.fade = true;
   $timeout(function () {
     $scope.fade = false;
-  }, 700);
+  }, 600);
 
   // ---------------------------------------------------
   // SPACE ID + ACCESS TOKEN + CONTENT TYPE + INFO TYPE
