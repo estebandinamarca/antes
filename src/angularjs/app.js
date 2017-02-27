@@ -31,7 +31,8 @@ app.config(function($routeProvider, $locationProvider) {
     //   .hashPrefix('!');
 });
 
-app.controller('menuController', function($scope, $location) { 
+app.controller('menuController', function($scope, $location) {
+
   $scope.isActive = function (viewLocation) { 
     return viewLocation === $location.path();
   };
@@ -39,7 +40,7 @@ app.controller('menuController', function($scope, $location) {
   $scope.isActiveCat = function (viewLocation) { 
     return viewLocation === $location.search().category;
   };
-
+  
 });
 
 app.controller('inicioController', function($scope, $http, $location) {
@@ -134,7 +135,6 @@ app.controller('inicioController', function($scope, $http, $location) {
   }
 
   getPlaces();
-
 });
 
 app.controller('placeController', function($scope, $http, $location) {
@@ -164,7 +164,7 @@ app.controller('placeController', function($scope, $http, $location) {
     $scope.jsonUrl = "https://cdn.contentful.com/spaces/"+ $scope.spaceId +"/"+ $scope.infoType +"?access_token="+ $scope.accessToken + $scope.contentType + "&sys.id=" + $scope.placeId;
     $http.get($scope.jsonUrl).then(function (response) {
       console.log('$scope.jsonUrl :' + $scope.jsonUrl);
-      
+
       // ADD ICON INFO AND URL
       angular.forEach(response.data.items, function(item) {
         angular.forEach(response.data.includes.Asset, function(asset) {
@@ -184,7 +184,6 @@ app.controller('placeController', function($scope, $http, $location) {
   }
 
   getPlace();
-
 });
 
 // app.controller('parquesController', function($scope, $location) {
