@@ -49,6 +49,13 @@ app.controller('inicioController', function($scope, $http, $location, $timeout) 
   $timeout(function () {
     $scope.fade = false;
   }, 600);
+<<<<<<< HEAD
+=======
+
+  // $scope.animation = function () {
+  //   $scope.fade = 'on';
+  // };
+>>>>>>> parent of 6960533... ng-enter overlay
 
   // --------------------------------------------------
   // SPACE ID + ACCESS TOKEN + CONTENT TYPE + INFO TYPE
