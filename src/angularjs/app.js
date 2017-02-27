@@ -40,14 +40,13 @@ app.controller('menuController', function($scope, $location) {
   $scope.isActiveCat = function (viewLocation) { 
     return viewLocation === $location.search().category;
   };
-  
 });
 
 app.controller('inicioController', function($scope, $http, $location) {
 
-  // -----------------------------------------
+  // --------------------------------------------------
   // SPACE ID + ACCESS TOKEN + CONTENT TYPE + INFO TYPE
-  // -----------------------------------------
+  // --------------------------------------------------
   $scope.spaceId = ['exxl6su6yxqc'];
   $scope.accessToken = ['38f9d13b1d29e3fce9d65ec6ccd3bb5f13e88f14e88c3e47a162bee0ea170266'];
   $scope.contentType = ['&content_type=place'];
@@ -163,6 +162,7 @@ app.controller('placeController', function($scope, $http, $location) {
   function getPlace() {
     $scope.jsonUrl = "https://cdn.contentful.com/spaces/"+ $scope.spaceId +"/"+ $scope.infoType +"?access_token="+ $scope.accessToken + $scope.contentType + "&sys.id=" + $scope.placeId;
     $http.get($scope.jsonUrl).then(function (response) {
+
       console.log('$scope.jsonUrl :' + $scope.jsonUrl);
 
       // ADD ICON INFO AND URL
@@ -186,22 +186,5 @@ app.controller('placeController', function($scope, $http, $location) {
   getPlace();
 });
 
-// app.controller('parquesController', function($scope, $location) {
-//     $scope.pageClass = 'parques';
-//     $scope.items = [
-//       { title: 'parque_algo_00_parques', id: 0, region: 'rm', category: 'parques' }
-//     ];
-//     if ( $location.search().region == 'rm' ) {
-//       $scope.pageClass = 'parques-rm';
-//     } else {
-//       $scope.pageClass = 'parques';
-//     }
-// });
 
-// app.controller('arqueologicosController', function($scope) {
-//     $scope.pageClass = 'arqueologicos';
-// });
 
-// app.controller('rutasController', function($scope) {
-//     $scope.pageClass = 'rutas';
-// });

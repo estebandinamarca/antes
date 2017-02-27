@@ -463,3 +463,16 @@ template {
 
 /* --------------------------------------- */
 .active { background: #CCC; color: red; }
+
+.main {
+  -webkit-transition: all 2s;
+  transition: all 2s;
+}
+.main.ng-leave  { opacity: .5; }
+.main.ng-enter  { opacity: 1; }
+
+
+
+
+
+
