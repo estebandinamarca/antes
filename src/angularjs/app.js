@@ -164,6 +164,7 @@ app.controller('placeController', function($scope, $http, $location) {
     $scope.jsonUrl = "https://cdn.contentful.com/spaces/"+ $scope.spaceId +"/"+ $scope.infoType +"?access_token="+ $scope.accessToken + $scope.contentType + "&sys.id=" + $scope.placeId;
     $http.get($scope.jsonUrl).then(function (response) {
       console.log('$scope.jsonUrl :' + $scope.jsonUrl);
+      
       // ADD ICON INFO AND URL
       angular.forEach(response.data.items, function(item) {
         angular.forEach(response.data.includes.Asset, function(asset) {
