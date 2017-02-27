@@ -45,9 +45,9 @@ app.controller('menuController', function($scope, $location) {
 
 app.controller('inicioController', function($scope, $http, $location, $timeout) {
 
-  $scope.fade = 'on';
+  $scope.fade = true;
   $timeout(function () {
-    $scope.fade = 'off';
+    $scope.fade = false;
   }, 1000);
 
   // $scope.animation = function () {
@@ -148,9 +148,9 @@ app.controller('inicioController', function($scope, $http, $location, $timeout) 
 
 app.controller('placeController', function($scope, $http, $location, $timeout) {
 
-  $scope.fade = 'on';
+  $scope.fade = true;
   $timeout(function () {
-    $scope.fade = 'off';
+    $scope.fade = false;
   }, 1000);
 
   // ---------------------------------------------------
