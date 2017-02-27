@@ -508,10 +508,10 @@ template {
   opacity: 1;
   z-index: 999;
 
-  -webkit-transition: 200ms linear all;
-  -moz-transition: 200ms linear all;
-  -o-transition: 200ms linear all;
-  transition: 200ms linear all;
+  -webkit-transition: 900ms linear all;
+  -moz-transition: 900ms linear all;
+  -o-transition: 900ms linear all;
+  transition: 900ms linear all;
 }
 
 .overlay.ng-enter,
@@ -545,8 +545,8 @@ template {
 
   border-radius: 100%;
   display: inline-block;
-  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  -webkit-animation: sk-bouncedelay 900ms infinite ease-in-out both;
+  animation: sk-bouncedelay 900ms infinite ease-in-out both;
 }
 
 .spinner .bounce1 {
