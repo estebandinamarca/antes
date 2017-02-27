@@ -461,9 +461,29 @@ template {
 }
 
 
+
+
 /* --------------------------------------- */
+body { height: 100vh; margin: 0; padding: 0; display: block; overflow: hidden; }
+
+.aside {
+  width: 20%;
+  height: 100%;
+  display: block;
+  float: left;
+  position: relative;
+}
+
+.main {
+  width: 80%;
+  height: 100%;
+  display: block;
+  float: right;
+  position: relative;
+}
+
+
 .active { background: #CCC; color: red; }
-.main { position: relative; }
 /*.overlay {  
   position: absolute;
   top: 0;
