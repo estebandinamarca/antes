@@ -48,7 +48,7 @@ app.controller('inicioController', function($scope, $http, $location, $timeout) 
   $scope.fade = 'on';
   $timeout(function () {
     $scope.fade = 'off';
-  }, 400);
+  }, 1000);
 
   // $scope.animation = function () {
   //   $scope.fade = 'on';
@@ -146,12 +146,12 @@ app.controller('inicioController', function($scope, $http, $location, $timeout) 
   getPlaces();
 });
 
-app.controller('placeController', function($scope, $http, $location) {
+app.controller('placeController', function($scope, $http, $location, $timeout) {
 
   $scope.fade = 'on';
   $timeout(function () {
     $scope.fade = 'off';
-  }, 400);
+  }, 1000);
 
   // ---------------------------------------------------
   // SPACE ID + ACCESS TOKEN + CONTENT TYPE + INFO TYPE
