@@ -40,9 +40,19 @@ app.controller('menuController', function($scope, $location) {
   $scope.isActiveCat = function (viewLocation) { 
     return viewLocation === $location.search().category;
   };
+
 });
 
-app.controller('inicioController', function($scope, $http, $location) {
+app.controller('inicioController', function($scope, $http, $location, $timeout) {
+
+  $scope.fade = 'on';
+  $timeout(function () {
+    $scope.fade = 'off';
+  }, 400);
+
+  // $scope.animation = function () {
+  //   $scope.fade = 'on';
+  // };
 
   // --------------------------------------------------
   // SPACE ID + ACCESS TOKEN + CONTENT TYPE + INFO TYPE
@@ -137,6 +147,11 @@ app.controller('inicioController', function($scope, $http, $location) {
 });
 
 app.controller('placeController', function($scope, $http, $location) {
+
+  $scope.fade = 'on';
+  $timeout(function () {
+    $scope.fade = 'off';
+  }, 400);
 
   // ---------------------------------------------------
   // SPACE ID + ACCESS TOKEN + CONTENT TYPE + INFO TYPE

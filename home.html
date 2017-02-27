@@ -17,16 +17,14 @@
 
 	<div class="aside" ng-controller="menuController">
 		<ul>
-			<li><a href="/#/" ng-class="{ active: isActive('/') }">Inicio</a></li>
-			<li><a href="#parques" ng-class="{ active: isActive('/parques') || isActiveCat('Parque Nacional') }">Parques nacionales</a></li>
-			<li><a href="#arqueologicos" ng-class="{ active: isActive('/arqueologicos') || isActiveCat('Patrimonio de la Humanidad') }">Sitios arqueologicos</a></li>
-			<li><a href="#rutas" ng-class="{ active: isActive('/rutas') || isActiveCat('Monumento Nacional') }">Rutas Patrimoniales</a></li>
+			<li><a href="/#/" ng-class="{ active: isActive('/') }" ng-click="animation();">Inicio</a></li>
+			<li><a href="#parques" ng-class="{ active: isActive('/parques') || isActiveCat('Parque Nacional') }" ng-click="animation();">Parques nacionales</a></li>
+			<li><a href="#arqueologicos" ng-class="{ active: isActive('/arqueologicos') || isActiveCat('Patrimonio de la Humanidad') }" ng-click="animation();">Sitios arqueologicos</a></li>
+			<li><a href="#rutas" ng-class="{ active: isActive('/rutas') || isActiveCat('Monumento Nacional') }" ng-click="animation();">Rutas Patrimoniales</a></li>
 		</ul>
 	</div>
 
-	<div class="main {{ pageClass }}" ng-view>
-		<h2>Hola</h2>
-	</div>
+	<div class="main {{ pageClass }}" ng-view></div>
 
 	<script src="src/angularjs/angular.min.js"></script>
 	<script src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>

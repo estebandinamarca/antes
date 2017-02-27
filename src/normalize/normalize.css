@@ -463,6 +463,10 @@ template {
 
 /* --------------------------------------- */
 .active { background: #CCC; color: red; }
+.main { position: relative; }
+.overlay { position: absolute; top: 0, left: 0; right: 0; bottom: 0; width: 100%; height: 100%; display: block; background: rgba(255,255,255,.5); }
+.overlay.off { display: none; }
+.overlay.on { display: block; }
 
 /*.main.ng-leave,
 .main.ng-enter {
