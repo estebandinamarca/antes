@@ -547,10 +547,10 @@ body { height: 100vh; margin: 0; padding: 0; display: block; overflow: hidden; }
   -o-transition: 200ms linear all;
   transition: 200ms linear all;
 
-  -webkit-transition-delay: 1s;
+  /*-webkit-transition-delay: 1s;
   -moz-transition-delay: 1s;
   -o-transition-delay: 1s;
-  transition-delay: 1s;
+  transition-delay: 1s;*/
 }
 
 .main.ng-enter .overlay,
@@ -566,8 +566,6 @@ body { height: 100vh; margin: 0; padding: 0; display: block; overflow: hidden; }
   height: 100%;
   opacity: 1;
 }
-
-
 
 
 
