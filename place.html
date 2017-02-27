@@ -1,8 +1,9 @@
-<div class="main">
-	<hr>
-	<h1>Place</h1>
-	<h2>{{ pageClass }}</h2>
-	<hr>
-	<h2 ng-repeat="place in place.items">{{ place.fields.name }} - {{ place.fields.category }} - {{ place.fields.description }}</h2>
-	
+<div class="overlay" ng-if="fade == true">
+	<div class="loader">Cargando...</div>
 </div>
+
+<hr>
+<h1>Place</h1>
+<h2>{{ pageClass }}</h2>
+<hr>
+<h2 ng-repeat="place in place.items">{{ place.fields.name }} - {{ place.fields.category }} - {{ place.fields.description }}</h2>

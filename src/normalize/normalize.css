@@ -483,6 +483,17 @@ body { height: 100vh; margin: 0; padding: 0; display: block; overflow: hidden; }
 }
 
 
+.mainInner { 
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
 .active { background: #CCC; color: red; }
 /*.overlay {  
   position: absolute;
@@ -558,7 +569,7 @@ body { height: 100vh; margin: 0; padding: 0; display: block; overflow: hidden; }
   height: 40px;
 }
 .loader {
-  margin: 60px auto;
+  margin: 100px auto;
   font-size: 10px;
   position: relative;
   text-indent: -9999em;
