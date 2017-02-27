@@ -137,7 +137,7 @@ app.controller('inicioController', function($scope, $http, $location) {
 
 });
 
-app.controller('placeController', function($scope, $location) {
+app.controller('placeController', function($scope, $http, $location) {
 
   // ---------------------------------------------------
   // SPACE ID + ACCESS TOKEN + CONTENT TYPE + INFO TYPE
@@ -181,6 +181,8 @@ app.controller('placeController', function($scope, $location) {
       
     });
   }
+
+  getPlace();
 
 });
 
