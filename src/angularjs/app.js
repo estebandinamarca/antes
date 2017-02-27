@@ -138,24 +138,50 @@ app.controller('inicioController', function($scope, $http, $location) {
 });
 
 app.controller('placeController', function($scope, $location) {
-    
-    $scope.pageClass = 'place';
 
-    $scope.place = [
-      {
-        id: 0,
-        title: 'Parque Nacional Torres del Paine',
-        region: 'xii',
-        category: 'parques',
-        description: 'Este es un lugar muy lindo.'
-      }
-    ];
+  // ---------------------------------------------------
+  // SPACE ID + ACCESS TOKEN + CONTENT TYPE + INFO TYPE
+  // ---------------------------------------------------
+  $scope.spaceId = ['exxl6su6yxqc'];
+  $scope.accessToken = ['38f9d13b1d29e3fce9d65ec6ccd3bb5f13e88f14e88c3e47a162bee0ea170266'];
+  $scope.contentType = ['&content_type=place'];
+  $scope.infoType = ['entries'];
 
-    // if ( $location.search().region == 'rm' ) {
-    //   $scope.pageClass = 'parques-rm';
-    // } else {
-    //   $scope.pageClass = 'parques';
-    // }
+  // ---------------------------------------------------
+  // --
+  // ---------------------------------------------------
+  $scope.pageClass = 'place';
+  $scope.placeId = '';
+  $scope.place = [];
+
+  if ( $location.search().id ) {
+    $scope.placeId = $location.search().id;
+  } else {
+    console.log('no hay location search id');
+  }
+
+  function getPlace() {
+    $scope.jsonUrl = "https://cdn.contentful.com/spaces/"+ $scope.spaceId +"/"+ $scope.infoType +"?access_token="+ $scope.accessToken + $scope.contentType + "&sys.id=" + $scope.placeId;
+    $http.get($scope.jsonUrl).then(function (response) {
+      console.log('$scope.jsonUrl :' + $scope.jsonUrl);
+      // ADD ICON INFO AND URL
+      angular.forEach(response.data.items, function(item) {
+        angular.forEach(response.data.includes.Asset, function(asset) {
+          if ( item.fields.icon.sys.id == asset.sys.id ) {
+            item.fields.icon.data = {};
+            item.fields.icon.data = asset.fields;
+          }
+          if ( item.fields.cover.sys.id == asset.sys.id ) {
+            item.fields.cover.data = {};
+            item.fields.cover.data = asset.fields;
+          }
+        });
+      });
+      $scope.place = response.data;
+      
+    });
+  }
+
 });
 
 // app.controller('parquesController', function($scope, $location) {
