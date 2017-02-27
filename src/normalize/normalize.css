@@ -491,6 +491,9 @@ body { height: 100vh; margin: 0; padding: 0; display: block; overflow: hidden; }
   padding: 0;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-x: scroll;
   z-index: 1;
 }
 
@@ -525,7 +528,7 @@ body { height: 100vh; margin: 0; padding: 0; display: block; overflow: hidden; }
 }*/
 
 
-.overlay {
+.main .overlay {
   display: block;
   position: absolute;
   background: #FFF;
@@ -545,13 +548,13 @@ body { height: 100vh; margin: 0; padding: 0; display: block; overflow: hidden; }
   transition: 200ms linear all;
 }
 
-.overlay.ng-enter,
-.overlay.ng-leave.ng-leave-active {
+.main.ng-enter .overlay,
+.main.ng-leave.ng-leave-active .overlay {
   opacity: 0;
 }
 
-.overlay.ng-leave,
-.overlay.ng-enter.ng-enter-active {
+.main.ng-leave .overlay,
+.main.ng-enter.ng-enter-active .overlay {
   opacity: 1;
 }
 
