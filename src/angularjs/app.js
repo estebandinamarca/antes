@@ -2,6 +2,7 @@
 var app = angular.module('app', ['ngRoute', 'ngAnimate']);
 
 app.config(function($routeProvider, $locationProvider) {
+  
     $routeProvider
       .when('/', {
         templateUrl: 'inicio.html',
@@ -29,6 +30,7 @@ app.config(function($routeProvider, $locationProvider) {
     //     requireBase: true
     //   })
     //   .hashPrefix('!');
+
 });
 
 app.controller('menuController', function($scope, $location) {
@@ -45,6 +47,9 @@ app.controller('menuController', function($scope, $location) {
 
 app.controller('inicioController', function($scope, $http, $location, $timeout) {
 
+  // --------------------------------------------------
+  // FADE BETWEEN PAGES
+  // --------------------------------------------------
   $scope.fade = true;
   $timeout(function () {
     $scope.fade = false;
@@ -140,6 +145,7 @@ app.controller('inicioController', function($scope, $http, $location, $timeout) 
   }
 
   getPlaces();
+
 });
 
 app.controller('placeController', function($scope, $http, $location, $timeout) {
@@ -196,6 +202,5 @@ app.controller('placeController', function($scope, $http, $location, $timeout) {
 
   getPlace();
 });
-
 
 
