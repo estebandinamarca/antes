@@ -1,9 +1,11 @@
-<div class="overlay" ng-if="fade == true">
-	<div class="loader">Cargando...</div>
-</div>
+<div class="mainInner">
+	<div class="overlay" ng-if="fade == true">
+		<div class="loader">Cargando...</div>
+	</div>
 
-<hr>
-<h1>Rutas</h1>
-<h2>{{ pageClass }}</h2>
-<hr>
-<p ng-repeat="place in places.items"><a ng-href="#place?id={{ place.sys.id }}&category={{ place.fields.category }}">{{ place.fields.name }} - {{ place.fields.category }}</a></p>
+	<hr>
+	<h1>Rutas</h1>
+	<h2>{{ pageClass }}</h2>
+	<hr>
+	<p ng-repeat="place in places.items"><a ng-href="#place?id={{ place.sys.id }}&category={{ place.fields.category }}">{{ place.fields.name }} - {{ place.fields.category }}</a></p>
+</div>
