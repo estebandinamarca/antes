@@ -474,6 +474,7 @@ body { height: 100vh; margin: 0; padding: 0; display: block; overflow: hidden; }
   display: block;
   float: left;
   position: relative;
+  background: #EEE;
 }
 
 .main {
@@ -482,6 +483,8 @@ body { height: 100vh; margin: 0; padding: 0; display: block; overflow: hidden; }
   display: block;
   float: right;
   position: relative;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; /* Enables momentum scrolling on iOS devices, may be removed by setting to 'auto' in your own CSS. */
 }
 
 .mainInner { 
