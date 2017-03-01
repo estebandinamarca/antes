@@ -472,9 +472,26 @@ body { height: 100vh; margin: 0; padding: 0; display: block; overflow: hidden; }
   width: 20%;
   height: 100%;
   display: block;
-  float: left;
-  position: relative;
+  position: fixed;
   background: #EEE;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+
+  -webkit-transition: 150ms linear width;
+  -moz-transition: 150ms linear width;
+  -o-transition: 150ms linear width;
+  transition: 150ms linear width;
+}
+
+.aside.hidden {
+  width: 5%;
+}
+
+.aside.hidden:hover {
+  width: 20%;
 }
 
 .main {
@@ -484,19 +501,28 @@ body { height: 100vh; margin: 0; padding: 0; display: block; overflow: hidden; }
   float: right;
   position: relative;
   overflow: auto;
-  -webkit-overflow-scrolling: touch; /* Enables momentum scrolling on iOS devices, may be removed by setting to 'auto' in your own CSS. */
+  -webkit-overflow-scrolling: touch;
+
+  /*-webkit-transition: 100ms linear width;
+  -moz-transition: 100ms linear width;
+  -o-transition: 100ms linear width;
+  transition: 100ms linear width;*/
+}
+
+.main.place {
+  width: 95%;
 }
 
 .mainInner { 
-  position: absolute;
+  /*position: absolute;
   height: 100%;
-  width: 100%;
+  width: 100%;*/
   margin: 0;
   padding: 0;
-  top: 0;
+  /*top: 0;
   left: 0;
   z-index: 1;
-  overflow-x: scroll;
+  overflow-x: scroll;*/
 }
 
 .overlay {
@@ -511,7 +537,7 @@ body { height: 100vh; margin: 0; padding: 0; display: block; overflow: hidden; }
   height: 100%;
   text-align: center;
   opacity: 1;
-  z-index: 999;
+  z-index: 2;
 
   -webkit-transition: 200ms linear all;
   -moz-transition: 200ms linear all;
@@ -528,6 +554,7 @@ body { height: 100vh; margin: 0; padding: 0; display: block; overflow: hidden; }
 .overlay.ng-enter.ng-enter-active {
   opacity: 1;
 }
+
 /*.overlay.off {
   width: 0;
   height: 0;

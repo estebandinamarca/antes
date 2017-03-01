@@ -3,14 +3,14 @@
 		<div class="loader">Cargando...</div>
 	</div>
 
+	<div ng-repeat="place in place.items">
+		<img ng-src="http:{{ place.fields.cover.data.file.url }}" style="width: 100%;"><br>
+		<h2>{{ place.fields.name }} - {{ place.fields.category }} - {{ place.fields.description }}</h2>
+	</div>
+
 	<hr>
 	<h1>Place</h1>
 	<h2>{{ pageClass }}</h2>
 	<hr>
-
-	<div ng-repeat="place in place.items">
-		<img ng-src="http:{{ place.fields.cover.data.file.url }}" style="max-height: 140px;"><br>
-		<h2>{{ place.fields.name }} - {{ place.fields.category }} - {{ place.fields.description }}</h2>
-	</div>
 
 </div>
