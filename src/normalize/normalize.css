@@ -480,10 +480,10 @@ body { height: 100vh; margin: 0; padding: 0; display: block; overflow: hidden; }
   bottom: 0;
   z-index: 3;
 
-  -webkit-transition: 150ms linear width;
-  -moz-transition: 150ms linear width;
-  -o-transition: 150ms linear width;
-  transition: 150ms linear width;
+  -webkit-transition: 150ms ease width;
+  -moz-transition: 150ms ease width;
+  -o-transition: 150ms ease width;
+  transition: 150ms ease width;
 }
 
 .aside.hidden {
@@ -492,6 +492,21 @@ body { height: 100vh; margin: 0; padding: 0; display: block; overflow: hidden; }
 
 .aside.hidden:hover {
   width: 20%;
+  transition-delay: 100ms;
+}
+
+.aside ul {
+  padding: 10px;
+  list-style: none;
+}
+
+.aside ul li {
+  height: 60px;
+  line-height: 60px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .main {
