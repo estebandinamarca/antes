@@ -131,6 +131,7 @@ app.controller('inicioController', function($scope, $http, $location, $timeout) 
       });
 
       $scope.places = response.data;
+      //console.log(JSON.stringify($scope.places));
       
     });
   }

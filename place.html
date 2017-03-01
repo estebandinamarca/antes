@@ -7,5 +7,10 @@
 	<h1>Place</h1>
 	<h2>{{ pageClass }}</h2>
 	<hr>
-	<h2 ng-repeat="place in place.items">{{ place.fields.name }} - {{ place.fields.category }} - {{ place.fields.description }}</h2>
+
+	<div ng-repeat="place in place.items">
+		<img ng-src="http:{{ place.fields.cover.data.file.url }}" style="max-height: 140px;"><br>
+		<h2>{{ place.fields.name }} - {{ place.fields.category }} - {{ place.fields.description }}</h2>
+	</div>
+
 </div>
