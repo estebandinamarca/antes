@@ -6,12 +6,12 @@
 	<hr>
 
 	<!-- GOOGLE VR VIEW -->
-	<script src="src/google/vrview.js"></script>
+	<script src="vrview.js"></script>
 	<script type="text/javascript">
 		window.addEventListener('load', onVrViewLoad)
 		function onVrViewLoad() {
 			var vrView = new VRView.Player('#vrview', {
-				image: 'https://antes.herokuapp.com/img/360/test1.jpg'
+				image: './img/360/test1.jpg'
 			});
 		}
 	</script>
