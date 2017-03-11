@@ -4,11 +4,6 @@
 		<div class="loader">Cargando...</div>
 	</div>
 
-	<!-- VR VIEW -->
-	<div id="vrview"></div>
-
-	<hr>
-
 	<div ng-repeat="place in place.items">
 		<img ng-src="http:{{ place.fields.cover.data.file.url }}" style="width: 100%;"><br>
 		<h2>{{ place.fields.name }} - {{ place.fields.category }} - {{ place.fields.description }}</h2>
@@ -18,16 +13,5 @@
 	<h1>Place</h1>
 	<h2>{{ pageClass }}</h2>
 	<hr>
-
-	<!-- GOOGLE VR VIEW -->
-	<script src="src/google/vrview.js"></script>
-	<script type="text/javascript">
-		window.addEventListener('load', onVrViewLoad)
-		function onVrViewLoad() {
-			var vrView = new VRView.Player('#vrview', {
-				image: '../img/360/test1.jpg'
-			});
-		}
-	</script>
 
 </div>
