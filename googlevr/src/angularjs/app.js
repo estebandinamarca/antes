@@ -177,6 +177,16 @@ app.controller('placeController', function($scope, $http, $location, $timeout) {
     console.log('no hay location search id');
   }
 
+  // function onLoad() {
+  //   vrView = new VRView.Player('#vrview', {
+  //     width: '100%',
+  //     image: 'taj-mahal.jpg',
+  //     is_stereo: false,
+  //     is_autopan_off: true
+  //   });
+  // }
+  // window.addEventListener('load', onLoad);
+
   function getPlace() {
     $scope.jsonUrl = "https://cdn.contentful.com/spaces/"+ $scope.spaceId +"/"+ $scope.infoType +"?access_token="+ $scope.accessToken + $scope.contentType + "&sys.id=" + $scope.placeId;
     $http.get($scope.jsonUrl).then(function (response) {

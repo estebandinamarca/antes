@@ -1,4 +1,3 @@
-
 function onLoad() {
   vrView = new VRView.Player('#vrview', {
     width: '100%',
