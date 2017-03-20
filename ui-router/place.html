@@ -1,0 +1,26 @@
+
+<link href="vr/style.css" rel="stylesheet" type="text/css">
+<!-- <script src="vr/build/vrview.js"></script>
+<script src="index.js"></script> -->
+
+<div class="mainInner">
+
+	<div class="overlay" ng-if="fade == true">
+		<div class="loader">Cargando...</div>
+	</div>
+
+
+    <div id="vrview"></div>
+
+
+	<div ng-repeat="place in place.items">
+		<img ng-src="http:{{ place.fields.cover.data.file.url }}" style="width: 100%;"><br>
+		<h2>{{ place.fields.name }} - {{ place.fields.category }} - {{ place.fields.description }}</h2>
+	</div>
+
+	<hr>
+	<h1>Place</h1>
+	<h2>{{ pageClass }}</h2>
+	<hr>
+
+</div>

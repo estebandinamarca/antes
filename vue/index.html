@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" href="">
+	<title>Vue Test</title>
+	<style>
+		.page-enter-active, .page-leave-active {
+			transition: opacity 1s, transform 1s;
+		}
+		.page-enter, .page-leave-to {
+			opacity: 0;
+			transform: translateX(-30%);
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="app">
+		<h1>Hello App!</h1>
+		<p>
+			<!-- use router-link component for navigation. -->
+			<!-- specify the link by passing the `to` prop. -->
+			<!-- <router-link> will be rendered as an `<a>` tag by default -->
+			<router-link to="/">Index</router-link>
+			<router-link to="/foo">Go to Foo</router-link>
+			<router-link to="/bar">Go to Bar</router-link>
+			<router-link to="/bar/algo">-- itemAlgo</router-link>
+			<hr>
+		</p>
+		<!-- route outlet -->
+		<!-- component matched by the route will render here -->
+		<router-view></router-view>
+	</div>
+
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+	<!-- VUE JS -->
+	<!-- <script src="src/vue.js"></script>
+	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script> -->
+	<script src="src/main.js"></script>
+
+</body>
+
+</html>

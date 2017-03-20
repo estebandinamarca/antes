@@ -1,0 +1,108 @@
+<div class="overlay" ng-if="fade == true">
+	<div class="loader">Cargando...</div>
+</div>
+
+<div class="mainInner">
+
+	<h1>Inicio</h1>
+	<h2>{{ pageClass }}</h2>
+	<hr>
+	<p onclick="$('.main').animate({ scrollTop: 127 }, 'fast');">IR A XXXXXXX HASH</p>
+
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+
+	<p ng-repeat="place in places.items" id="id-{{ place.sys.id }}">
+		<img ng-src="http:{{ place.fields.cover.data.file.url }}" style="max-height: 60px;"><br>
+		<a ng-href="#place?id={{ place.sys.id }}&category={{ place.fields.category }}">{{ place.fields.name }} - {{ place.fields.category }}</a>
+	</p>
+	<hr>
+	<a href="" ng-click="changeLocation('rm');">FUNCTION QUE AGREGA LOCATION SEARCH </a>
+	<p>{{ testing }}</p>
+
+	<hr>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+	<p>TEST</p>
+
+</div>
+

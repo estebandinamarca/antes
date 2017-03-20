@@ -1,36 +1,43 @@
 'use strict';
-var app = angular.module('app', ['ngRoute', 'ngAnimate']);
+var app = angular.module('app', ['ngRoute', 'ngAnimate', 'oc.lazyLoad']);
 
-app.config(function($routeProvider, $locationProvider) {
-  
-    $routeProvider
-      .when('/', {
-        templateUrl: 'inicio.html',
-        controller: 'inicioController'
-      })
-      .when('/parques', {
-        templateUrl: 'parques.html',
-        controller: 'inicioController'
-      })
-      .when('/arqueologicos', {
-        templateUrl: 'arqueologicos.html',
-        controller: 'inicioController'
-      })
-      .when('/rutas', {
-        templateUrl: 'rutas.html',
-        controller: 'inicioController'
-      })
-      .when('/place', {
-        templateUrl: 'place.html',
-        controller: 'placeController'
-      });
+app.config(function($routeProvider, $locationProvider, $controllerProvider) {
+  $routeProvider
+    .when('/', {
+      templateUrl: 'inicio.html',
+      controller: 'inicioController'
+    })
+    .when('/parques', {
+      templateUrl: 'parques.html',
+      controller: 'inicioController'
+    })
+    .when('/arqueologicos', {
+      templateUrl: 'arqueologicos.html',
+      controller: 'inicioController'
+    })
+    .when('/rutas', {
+      templateUrl: 'rutas.html',
+      controller: 'inicioController'
+    })
+    .when('/place', {
+      templateUrl: 'place.html',
+      controller: 'placeController',
+      resolve: {
+        lazy: ['$ocLazyLoad', function($ocLazyLoad) {
+          return $ocLazyLoad.load([{
+            name: 'app',
+            files: ['../googlevr/vr/build/vrview.js']
+
+          }]);
+        }]
+      }
+    });
     // $locationProvider
     //   .html5Mode({
     //     enabled: true,
     //     requireBase: true
     //   })
     //   .hashPrefix('!');
-
 });
 
 app.controller('menuController', function($scope, $location) {
@@ -177,16 +184,6 @@ app.controller('placeController', function($scope, $http, $location, $timeout) {
     console.log('no hay location search id');
   }
 
-  // function onLoad() {
-  //   vrView = new VRView.Player('#vrview', {
-  //     width: '100%',
-  //     image: 'taj-mahal.jpg',
-  //     is_stereo: false,
-  //     is_autopan_off: true
-  //   });
-  // }
-  // window.addEventListener('load', onLoad);
-
   function getPlace() {
     $scope.jsonUrl = "https://cdn.contentful.com/spaces/"+ $scope.spaceId +"/"+ $scope.infoType +"?access_token="+ $scope.accessToken + $scope.contentType + "&sys.id=" + $scope.placeId;
     $http.get($scope.jsonUrl).then(function (response) {
@@ -207,11 +204,28 @@ app.controller('placeController', function($scope, $http, $location, $timeout) {
         });
       });
       $scope.place = response.data;
-      
+      //kolkokconsole.log(JSON.stringify($scope.place));
+      //$scope.name = 'taj-mahal';
+
+      // GOOGLE VR VIEW
+      //var name = 'taj-mahal';
+      var img = response.data.items[0].fields.cover.data.file.url;
+      function onLoad() {
+      var vrView = new VRView.Player('#vrview', {
+          width: '100%',
+          image: 'http:' + img,
+          is_stereo: false,
+          is_autopan_off: true
+        });
+      }
+      onLoad();
+      //window.addEventListener('load', onLoad);
+
     });
   }
 
   getPlace();
+
 });
 
 

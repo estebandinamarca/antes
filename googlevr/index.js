@@ -1,5 +1,6 @@
+//var vrView = '';
 function onLoad() {
-  vrView = new VRView.Player('#vrview', {
+ vrView = new VRView.Player('#vrview', {
     width: '100%',
     //height: 480,
     image: 'taj-mahal.jpg',
@@ -8,4 +9,7 @@ function onLoad() {
   });
 }
 
+//onLoad();
+
 window.addEventListener('load', onLoad);
+//document.addEventListener('load', onLoad);
