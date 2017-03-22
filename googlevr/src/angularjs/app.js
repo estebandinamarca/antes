@@ -1,13 +1,11 @@
 'use strict';
 var app = angular.module('app', ['ngRoute', 'ngAnimate', 'oc.lazyLoad']);
 
-
 app.filter('mathround', function() {
   return function(input) {
     return Math.ceil(input);
   };
 });
-
 
 app.config(function($routeProvider, $locationProvider, $controllerProvider) {
   $routeProvider
