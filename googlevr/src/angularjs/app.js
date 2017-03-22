@@ -10,23 +10,23 @@ app.filter('mathround', function() {
 app.config(function($routeProvider, $locationProvider, $controllerProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: 'inicio.html',
+      templateUrl: '../googlevr/inicio.html',
       controller: 'inicioController'
     })
     .when('/parques', {
-      templateUrl: 'parques.html',
+      templateUrl: '../googlevr/parques.html',
       controller: 'inicioController'
     })
     .when('/arqueologicos', {
-      templateUrl: 'arqueologicos.html',
+      templateUrl: '../googlevr/arqueologicos.html',
       controller: 'inicioController'
     })
     .when('/rutas', {
-      templateUrl: 'rutas.html',
+      templateUrl: '../googlevr/rutas.html',
       controller: 'inicioController'
     })
     .when('/place', {
-      templateUrl: 'place.html',
+      templateUrl: '../googlevr/place.html',
       controller: 'placeController',
       resolve: {
         lazy: ['$ocLazyLoad', function($ocLazyLoad) {
