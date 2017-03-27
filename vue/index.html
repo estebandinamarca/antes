@@ -41,6 +41,13 @@
 	<script type="x-template" id="inicio">
 		<div>
 			<p>inicio</p>
+			<hr>
+			{{ info }}
+			<ul>
+				<li v-for="algo in info">
+					<p>{{ algo.url }}</p>
+				</li>
+			</ul>
 		</div>
 	</script>
 	<script type="x-template" id="Bar">
@@ -55,7 +62,7 @@
 
 	<script src="https://unpkg.com/vue/dist/vue.js"></script>
 	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
-	<script src="https://cdn.jsdelivr.net/vue.resource/1.2.1/vue-resource.min.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 	<!-- VUE JS -->
 	<!-- <script src="src/vue.js"></script>

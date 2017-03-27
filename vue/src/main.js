@@ -17,6 +17,32 @@ const router = new VueRouter({
   routes // short for routes: routes
 })
 
+
+Vue.prototype.$http = axios
+
 const app = new Vue({
-	router
+	router,
+	// data: function () {
+	// 	return {
+	// 		info: []
+	// 	};
+	// },
+	methods: {
+		getUser: function() {
+			this.$http.get('http://httpbin.org/get')
+			.then(function(response) {
+				this.info = response;
+				console.log(response);
+			})
+			.catch(function(error) {
+				console.log(error);
+			});
+		}
+	},
+	created: function () {
+		this.getUser();
+	}
+
 }).$mount('#app')
+
+//app.getUser();
