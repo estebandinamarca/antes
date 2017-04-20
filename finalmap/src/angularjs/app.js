@@ -17,6 +17,24 @@ app.controller('antesmap', function($scope, $http, NgMap) {
   $scope.lat = -33.448890;
   $scope.lng = -70.669265;
 
+
+  // ===============================
+  // GET PLACES INPUT
+  // ===============================
+  vm.types = "['address']";
+  vm.placeChanged = function() {
+    vm.place = this.getPlace();
+    console.log('location', vm.place.geometry.location);
+    console.log( vm.place.geometry.location.lat() + ", " + vm.place.geometry.location.lng());
+    //vm.map.setCenter(vm.place.geometry.location);
+    $scope.setCenter = vm.place.geometry.location.lat() + ", " + vm.place.geometry.location.lng();
+    getPromotions();
+  }
+
+
+  // ===============================
+  // GETMAP ngMap
+  // ===============================
   NgMap.getMap().then(function(evMap) {
 
     //vm.map = evMap;

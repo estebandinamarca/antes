@@ -19,12 +19,22 @@
 		<header>
 			<span ng-repeat="placeList in positions" ng-click="showDetailBtn(event, placeList);">{{ placeList.title }} <br></span>
 			<hr>
+      <input
+        places-auto-complete
+        size=80
+        ng-model="vm.address"
+        component-restrictions="{country:'cl'}"
+        types="{{ types }}"
+        on-place-changed="vm.placeChanged()" />
+      <br>
 			Latitude : <input type="number" ng-model="vm.lat" /> Longitude : <input type="number" ng-model="vm.lng" />
 			<button ng-click="dragBtn(-33.618608, -70.590606)">Puente Alto</button>
 			<button ng-click="dragBtn(-33.398981, -70.557312)">Las Condes</button>
 		</header>
 
-		<ng-map id="mapId" default-style="false" center="{{ setCenter }}" zoom="{{ setZoom }}" on-dragend="dragEvent();" on-click="hideDetail();">
+    <!-- <div class="" ng-if="vm.place"> -->
+		    <ng-map id="mapId" default-style="false" center="{{ setCenter }}" zoom="{{ setZoom }}" on-dragend="dragEvent();" on-click="hideDetail();">
+    <!-- </div> -->
 
 			<!-- <custom-marker
 			id="{{ place.slug }}"
@@ -65,7 +75,7 @@
 	</div>
 
 	<!-- GOOGLE MAPS API -->
-	<script src="http://maps.google.com/maps/api/js"></script>
+	<script src="http://maps.google.com/maps/api/js?libraries=placeses,visualization,drawing,geometry,places"></script>
 	<script src="./src/angularjs/angular.min.js"></script>
 	<script src="./src/ngmap/ng-map.min.js"></script>
 	<script src="./src/angularjs/app.js"></script>

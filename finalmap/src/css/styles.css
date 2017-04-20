@@ -104,3 +104,18 @@ h2 {
   width: 300px!important;
   max-width: 300px!important;
 }
+
+/* INPUT GOOGLE AUTOCOMPLETE */
+.pac-item {
+  /*font-size: 20px;*/
+  color: red;
+  padding: 10px 20px;
+}
+
+.pac-item-query {
+  color: orange;
+}
+
+.pac-matched {
+  color: blue;
+}
