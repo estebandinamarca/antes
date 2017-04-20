@@ -1,0 +1,18 @@
+{
+  "locations": [
+    {
+      "id":3,
+      "slug":"macul",
+      "lat":-33.485147,
+      "lng":-70.599200,
+      "title":"Macul"
+    },
+    {
+      "id":4,
+      "slug":"san-joaquin",
+      "lat":-33.496202,
+      "lng":-70.628336,
+      "title":"San Joaquín"
+    }
+  ]
+}

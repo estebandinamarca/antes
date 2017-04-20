@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+body,
+.container {
+  padding: 0px;
+  margin: 0px;
+  display: block;
+  position: relative;
+}
+
+header {
+  width: 100%;
+  display: block;
+  margin: 0;
+  position: relative;
+  height: 130px;
+}
+
+ng-map {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 130px);
+}
+
+
+/* INFO WINDOWS */
+/* INFO WINDOWS MAP */
+.infoWinContainer {
+  position: relative;
+  width: 300px;
+  /*height: 300px;*/
+}
+
+.infoWinImg {
+  width: 300px;
+  height: 150px;
+  float: left;
+  display: block;
+  margin: 1px 0px 0px 1px;
+}
+
+.infoWinTxt {
+  width: 300px;
+  height: 70px;
+  float: right;
+  display: block;
+}
+
+h2 {
+  font-size: 14px;
+  margin: 10px 0 5px 5px;
+  padding: 0;
+  text-align: left;
+}
+
+.btnOpenCanvas {
+  background: red;
+  color: white;
+  width: 70px;
+  font-size: 10px;
+  margin: 5px 0 0px 5px;
+  padding: 8px 0px;
+  display: block;
+  text-align: center;
+}
+
+/*img.infoWindImg {
+  margin: 0px;
+  width: 300px;
+  height: 100px;
+  display: block;
+}*/
+
+
+.ng-map-info-window {
+  /*background-color: #000 !important;*/
+  /*color: #FFF;*/
+  width: 300px!important;
+  max-width: 300px!important;
+}
+.ng-map-info-window > .gm-style-iw {
+  top: 0!important;
+  left: 0!important;
+  width: 300px!important;
+}
+
+.ng-map-info-window div:first-child > div:nth-child(1) {
+  /*border-top-color: #000 !important;*/
+}
+
+.ng-map-info-window div:first-child > div:nth-child(2) {
+  width: 300px!important;
+  max-width: 300px!important;
+}
+
+.ng-map-info-window div:first-child > div:nth-child(3) div {
+  /*background-color: transparent !important;*/
+}
+
+.ng-map-info-window div:first-child > div:nth-child(4) {
+  /*background-color: transparent !important;*/
+  width: 300px!important;
+  max-width: 300px!important;
+}

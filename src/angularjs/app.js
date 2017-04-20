@@ -31,6 +31,8 @@ app.controller('antesmap', function($scope, $http, $timeout, NgMap) {
   // -----------------------------------------
   $scope.places = [];
   $scope.selectedCity = [];
+  $scope.selectedCity = $scope.cities[0].position;
+
   function getPlaces() {
     // https://cdn.contentful.com/spaces/exxl6su6yxqc/entries?limit=10&access_token=38f9d13b1d29e3fce9d65ec6ccd3bb5f13e88f14e88c3e47a162bee0ea170266&content_type=place&fields.tags[all]=camping,trekking&fields.category=Patrimonio%20de%20la%20Humanidad
     // &fields.tags[in]=camping,trekking
@@ -62,7 +64,23 @@ app.controller('antesmap', function($scope, $http, $timeout, NgMap) {
       });
 
       $scope.places = response.data;
-      $scope.selectedCity = $scope.cities[0];
+      //$scope.selectedCity = $scope.cities[0].position;
+      
+      var centerMap = $scope.map.getCenter();
+      var lat = centerMap.lat();
+      var long = centerMap.lng();
+
+      console.log(lat);
+
+      $scope.selectedCity = "[" + lat + "," + long + "]"; 
+
+      console.log($scope.selectedCity);
+
+
+      //console.log(JSON.stringify($scope.map.getCenter()));
+      //console.log(JSON.stringify($scope.map.getCenter.lat()));
+      //console.log(JSON.stringify($scope.cities[0].position));
+      //$scope.selectedCity = $scope.map.getCenter();
       
     });
   }
@@ -131,8 +149,9 @@ app.controller('antesmap', function($scope, $http, $timeout, NgMap) {
     $scope.map.hideInfoWindow('iw_id');
   };
 
-  $scope.alertas = function() {
-    alert('hola!')
+  $scope.dragEnd = function() {
+    //getPlaces();
+    //alert('hola!');
   };
 
   // --------------------------------------------

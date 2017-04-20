@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>ngMap Tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="bower_components/angularjs/angular.js"></script>
+    <script src="bower_components/lodash/dist/lodash.js"></script>
+    <script src='bower_components/angular-google-maps/dist/angular-google-maps.js'></script>
+    
+    <script src="angularGoogleMapsTestApp.js"></script>
+    <style>
+        .angular-google-map-container { height: 400px; }
+
+    </style>
+</head>
+<body ng-app="angularGoogleMapsTestApp">
+    <h3>Angular Google Maps Test</h3>
+
+    <p>Test showing adding and removing markers on Angular Google Maps
+        (from: <a href="http://angular-ui.github.io/angular-google-maps/#!/">
+            Angular Google Maps</a>)</p>
+
+    <div ng-controller="angularGoogleMapCtrl">
+        <input ng-click="toggleAddAndRemoveMarkers()" type="button" value="Add Next/Remove Marker">
+        <input ng-click="removeMarkers()" type="button" value="Remove all markers">
+        
+        <div style="height:500px">
+            <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+                <ui-gmap-markers models="markers" coords="'self'" modelsbyref="false"/>
+            </ui-gmap-google-map>
+        </div>
+
+    </div>
+
+</body>
+</html>
