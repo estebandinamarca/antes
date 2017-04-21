@@ -6,16 +6,14 @@ app.controller('antesmap', function($scope, $http, NgMap) {
   var map;
   var vm = this;
 
-  // $scope.lat = vm.lat;
-  // $scope.lng = vm.lng;
 
   vm.lat = -33.448890;
   vm.lng = -70.669265;
+  $scope.lat = vm.lat;
+  $scope.lng = vm.lng;
+
   $scope.setCenter = vm.lat + ", " + vm.lng;
   $scope.setZoom = 11;
-
-  $scope.lat = -33.448890;
-  $scope.lng = -70.669265;
 
 
   // ===============================
@@ -23,12 +21,22 @@ app.controller('antesmap', function($scope, $http, NgMap) {
   // ===============================
   vm.types = "['address']";
   vm.placeChanged = function() {
-    vm.place = this.getPlace();
-    console.log('location', vm.place.geometry.location);
-    console.log( vm.place.geometry.location.lat() + ", " + vm.place.geometry.location.lng());
-    //vm.map.setCenter(vm.place.geometry.location);
-    $scope.setCenter = vm.place.geometry.location.lat() + ", " + vm.place.geometry.location.lng();
-    getPromotions();
+
+      if ( vm.address.length > 0 ) {
+
+        vm.place = this.getPlace();
+        $scope.lat = vm.place.geometry.location.lat();
+        $scope.lng = vm.place.geometry.location.lng();
+        $scope.setCenter = vm.place.geometry.location.lat() + ", " + vm.place.geometry.location.lng();
+        getPromotions();
+
+        console.log('vm.address.length :' + vm.address.length);
+        console.log('location', vm.place.geometry.location);
+        console.log( vm.place.geometry.location.lat() + ", " + vm.place.geometry.location.lng());
+
+      } else {
+        console.log('error');
+      }
   }
 
 
@@ -77,13 +85,14 @@ app.controller('antesmap', function($scope, $http, NgMap) {
     //console.log("$scope.lat $scope.lng: " +  $scope.lat + ", " + $scope.lng);
     //console.log("VM: " +  vm.lat + "," + vm.lng);
 
+    //$scope.setCenter = $scope.lat + ", " + $scope.lng;
+
     $scope.jsonUrl = "http://192.168.40.139:8080/finalmap/" + $scope.locations + ".json";
     $http.get($scope.jsonUrl).success(function (data) {
 
       $scope.positions = data.locations;
       console.log('$scope.jsonUrl :' + $scope.jsonUrl);
       console.log('positions :' + JSON.stringify($scope.positions));
-
 
     });
 
