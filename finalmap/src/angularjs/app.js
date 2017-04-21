@@ -77,7 +77,7 @@ app.controller('antesmap', function($scope, $http, NgMap) {
     //console.log("$scope.lat $scope.lng: " +  $scope.lat + ", " + $scope.lng);
     //console.log("VM: " +  vm.lat + "," + vm.lng);
 
-    $scope.jsonUrl = "http://192.168.40.139:8080/finalmap/" + $scope.locations + ".json";
+    $scope.jsonUrl = "http://192.168.1.166:8080/finalmap/" + $scope.locations + ".json";
     $http.get($scope.jsonUrl).success(function (data) {
 
       $scope.positions = data.locations;
