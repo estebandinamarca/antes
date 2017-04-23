@@ -87,7 +87,7 @@ app.controller('antesmap', function($scope, $http, NgMap) {
 
     //$scope.setCenter = $scope.lat + ", " + $scope.lng;
 
-    $scope.jsonUrl = "http://192.168.40.139:8080/finalmap/" + $scope.locations + ".json";
+    $scope.jsonUrl = "http://192.168.1.166:8080/finalmap/" + $scope.locations + ".json";
     $http.get($scope.jsonUrl).success(function (data) {
 
       $scope.positions = data.locations;
@@ -117,6 +117,10 @@ app.controller('antesmap', function($scope, $http, NgMap) {
   $scope.showDetail = function(event, place) {
     $scope.place = place;
     $scope.map.showInfoWindow('iw_id', this);
+  };
+
+  $scope.openDetail = function(title) {
+    alert(title);
   };
 
   $scope.showDetailBtn = function(event, place) {

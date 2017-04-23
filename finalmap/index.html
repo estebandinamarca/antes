@@ -18,7 +18,7 @@
   <div class="container" ng-controller="antesmap as vm">
 
     <header>
-      <span ng-repeat="placeList in positions" ng-mouseover="showDetailBtn(event, placeList);" ng-click="showDetailBtn(event, placeList);">{{ placeList.title }} <br></span>
+      <span ng-repeat="placeList in positions" ng-mouseover="showDetailBtn(event, placeList);" ng-click="openDetail(placeList.title);">{{ placeList.title }} <br></span>
       <hr>
       <input
       places-auto-complete
@@ -52,7 +52,7 @@
             </div>
             <div class="infoWinTxt">
               <h2>{{ place.title }}</h2>
-              <a class="btnOpenCanvas" href="" ng-click="toggleCanvas();"><b>Ver detalles ></b></a>
+              <a class="btnOpenCanvas" href="" ng-click="openDetail(place.title);"><b>Ver detalles ></b></a>
             </div>
           </div>
         </div>
