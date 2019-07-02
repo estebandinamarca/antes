@@ -3,6 +3,7 @@ Web app about historical places.
 
 # Project tree
 
+```
 .
  * [tree-md](./tree-md)
  * [dir2](./dir2)
@@ -15,3 +16,4 @@ Web app about historical places.
  * [file_in_root.ext](./file_in_root.ext)
  * [README.md](./README.md)
  * [dir3](./dir3)
+```
