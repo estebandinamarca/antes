@@ -11,7 +11,8 @@ Web app about historical places.
 ├── dir2
 │   ├── file21.ext
 │   ├── file22.ext
-│   └── file23.ext
+│   ├── file23.ext
+    └── file23.ext
 ├── dir3
 ├── file_in_root.ext
 └── README.md
